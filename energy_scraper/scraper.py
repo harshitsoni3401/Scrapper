@@ -684,11 +684,21 @@ def _detect_language(text: str) -> str:
 
 class AsyncMAScraper:
 
-    def __init__(self, start_date: str, end_date: str, headless: bool = True, max_workers: int = 4, enable_aggregator: bool = True, site_filter: list[str] | None = None):
+    def __init__(
+        self,
+        start_date: str,
+        end_date: str,
+        headless: bool = True,
+        max_workers: int = 4,
+        enable_aggregator: bool = True,
+        site_filter: list[str] | None = None,
+        browser_only: bool = False,
+    ):
         self.start_date = start_date
         self.end_date = end_date
         self.headless = headless
         self.max_workers = max_workers
+        self.browser_only = bool(browser_only)
         self.extractor = DealExtractor()
         self.budget_mode = getattr(self.extractor.ai, "budget_mode", False)
         self.excel_writer = ExcelReportWriter()
@@ -703,7 +713,8 @@ class AsyncMAScraper:
         self.rejected_deals: list = []
         self.logs: list = []
         self.issues: list = []
-        self.enable_aggregator = enable_aggregator
+        # Browser-only implies "no aggregation" because the aggregator is RSS/Google-News/SEC based.
+        self.enable_aggregator = bool(enable_aggregator) and (not self.browser_only)
         self.site_filter = [s.lower() for s in site_filter] if site_filter else None
 
         # ── Agentic AI Agents (Self-Healing, Query Generation, QA) ──
@@ -1013,13 +1024,14 @@ class AsyncMAScraper:
         is_paywall_site = site.get("is_paywall", False)
 
         logger.info(f"[{name}] Starting async processing...")
-        fetcher = AsyncSmartFetcher(browser_manager=browser, session=session)
+        fetcher = AsyncSmartFetcher(browser_manager=browser, session=session, browser_only=self.browser_only)
         html, rss_articles, fetch_method, access_mode, render_type = await fetcher.fetch_listing(site)
 
         candidates = []
         
         # ── Grounding Agent Fallback for Hard Blocks ──
-        if access_mode in ("Blocked", "Failed") and not rss_articles:
+        # Disabled in browser-only mode (it is a non-browser search/tool fallback).
+        if (not self.browser_only) and access_mode in ("Blocked", "Failed") and not rss_articles:
             candidates = await self._run_grounding_fallback(name, url)
             if not candidates:
                 await self._update_metric("Total URLs failed / blocked")
@@ -1435,26 +1447,26 @@ class AsyncMAScraper:
                                    "sec edgar", "oilandgas360", "renewablesnow", "rigzone")
 
         async with aiohttp.ClientSession() as session:
-            fetcher = AsyncSmartFetcher(browser_manager=None, session=session)
+            fetcher = AsyncSmartFetcher(browser_manager=None, session=session, browser_only=self.browser_only)
 
             cand_sem = asyncio.Semaphore(25)  # Increased from 10 for speed
-            
+
             async def _process_agg_cand(cand):
-                    nonlocal agg_in_range, agg_deals, agg_rejected
-                    async with cand_sem:
-                        headline = cand["headline"]
-                        article_url = cand["url"]
-                        date_hint = cand.get("date_hint")
-                        source = cand.get("source", "Aggregator")
+                nonlocal agg_in_range, agg_deals, agg_rejected
+                async with cand_sem:
+                    headline = cand["headline"]
+                    article_url = cand["url"]
+                    date_hint = cand.get("date_hint")
+                    source = cand.get("source", "Aggregator")
 
-                        if self.seen_cache.is_seen(article_url, headline):
+                    if self.seen_cache.is_seen(article_url, headline):
+                        return
+
+                    # Dedup against already-processed
+                    async with self.lock:
+                        if article_url in self.processed_urls:
                             return
-
-                        # Dedup against already-processed
-                        async with self.lock:
-                            if article_url in self.processed_urls:
-                                return
-                            self.processed_urls.add(article_url)
+                        self.processed_urls.add(article_url)
 
                     # Local SQLite Deal Deduplication
                     if self.db.deal_exists(headline):

@@ -43,6 +43,14 @@ copy .env.example .env
 .\scripts\Run-Scraper.ps1 -Start "31-03-2026" -End "01-04-2026" -Workers 1 -Sites "BusinessWire - Energy" -NoAggregator
 ```
 
+## Browser-Only Mode (Playwright Rendering Only)
+
+If you want to force browser rendering for **all** sites and disable RSS/Google-News/CloudScraper/aiohttp fallbacks:
+
+```powershell
+python -m energy_scraper.main --start "31-03-2026" --end "01-04-2026" --workers 1 --browser-only
+```
+
 ## Direct Python Commands
 
 If you prefer not to use the helper scripts:

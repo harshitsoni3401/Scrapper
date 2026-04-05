@@ -498,9 +498,10 @@ class AsyncSmartFetcher:
       8. Report 'Failed' silently — never crash the pipeline.
     """
 
-    def __init__(self, browser_manager=None, session: aiohttp.ClientSession = None):
+    def __init__(self, browser_manager=None, session: aiohttp.ClientSession = None, browser_only: bool = False):
         self.browser = browser_manager
         self.session = session
+        self.browser_only = bool(browser_only)
 
     async def fetch_listing(self, site: dict) -> tuple[str, list[dict], str, str, str]:
         name = site["name"]
@@ -517,6 +518,41 @@ class AsyncSmartFetcher:
         fetch_method = "A"
         access_mode = "Full"
         render_type = "Static"
+
+        # Browser-only mode: force Playwright for every listing page and disable all non-browser fallbacks.
+        if self.browser_only:
+            if not self.browser or not getattr(self.browser, "available", False):
+                logger.warning(f"[{name}] Browser-only mode requested but browser is unavailable.")
+                return "", [], "Browser-Only", "Failed", "Browser"
+            if deprioritized:
+                logger.info(f"[{name}] Browser-only: source deprioritized; skipping.")
+                return "", [], "Browser-Only", "Deprioritized", "Browser"
+            try:
+                html = await asyncio.wait_for(
+                    self.browser.fetch_page(
+                        url,
+                        wait_seconds=3.0,
+                        pagination_type=site.get("pagination_type"),
+                        load_more_selector=site.get("load_more_selector"),
+                        next_page_selector=site.get("next_page_selector"),
+                        max_pages=site.get("max_pages", 3),
+                        site_name=name,
+                    ),
+                    timeout=180,
+                )
+                if html and len(html) > 1000:
+                    access_mode = "Full"
+                    if any(s in html.lower() for s in ["subscribe to read", "paywall", "sign in to continue"]):
+                        access_mode = "Headline-Only"
+                    return html, [], "Browser-Only", access_mode, "JS"
+                logger.warning(f"[{name}] Browser-only returned empty/short page ({len(html)} chars)")
+                return html or "", [], "Browser-Only", "Failed", "JS"
+            except asyncio.TimeoutError:
+                logger.warning(f"[{name}] Browser-only Playwright timed out (180s)")
+                return "", [], "Browser-Only", "Failed", "JS"
+            except Exception as e:
+                logger.warning(f"[{name}] Browser-only Playwright error: {e}")
+                return "", [], "Browser-Only", "Failed", "JS"
 
         # ── Tier 1: Native RSS Feed ──
         rss_ok = False
@@ -654,6 +690,21 @@ class AsyncSmartFetcher:
 
     async def fetch_article(self, url: str, needs_js: bool = False) -> tuple[str, str, str]:
         """Fetch a single article body.  Falls back through CloudScraper → Google Cache → Playwright."""
+        if self.browser_only:
+            if not self.browser or not getattr(self.browser, "available", False):
+                return "", "Failed", "Browser"
+            try:
+                browser_html = await asyncio.wait_for(
+                    self.browser.fetch_page(url, wait_seconds=2.5),
+                    timeout=90,
+                )
+                if browser_html and len(browser_html) > 300:
+                    return browser_html, "Full", "Browser"
+                return browser_html or "", "Failed", "Browser"
+            except Exception as e:
+                logger.debug(f"Browser-only article fetch failed {url[:60]}: {e}")
+                return "", "Failed", "Browser"
+
         if not self.session:
             return "", "Failed", "Static"
 

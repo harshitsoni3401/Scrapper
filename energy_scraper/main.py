@@ -69,6 +69,11 @@ Examples:
     parser.add_argument("--visible", action="store_true", help="Run browser in visible mode (for CAPTCHAs)")
     parser.add_argument("--workers", type=int, default=3, help="Number of concurrent site workers")
     parser.add_argument("--no-aggregator", action="store_true", help="Disable the news aggregation layer")
+    parser.add_argument(
+        "--browser-only",
+        action="store_true",
+        help="Force Playwright browser-rendering only (disables RSS/Google News/CloudScraper/aiohttp fallbacks)",
+    )
     parser.add_argument("--sites", type=str, default=None,
                         help="Comma-separated site name filter (partial match). "
                              "Example: --sites 'Bloomberg,Reuters,AccessNewswire'")
@@ -210,8 +215,9 @@ Examples:
         end_date=e_date,
         headless=not args.visible,
         max_workers=args.workers,
-        enable_aggregator=not args.no_aggregator,
+        enable_aggregator=(not args.no_aggregator) and (not args.browser_only),
         site_filter=site_filter,
+        browser_only=args.browser_only,
     )
     
     await scraper.run()
