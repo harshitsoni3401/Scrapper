@@ -1,0 +1,300 @@
+﻿.\test_venv\Scripts\python.
+exe : Traceback (most 
+recent call last):
+At line:1 char:1
++ .\test_venv\Scripts\pytho
+n.exe -c "
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Tra  
+  ceback (most recent ca   
+ ll last)::String) [],     
+RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+5681, in normalize_text
+    return text.encode(self
+.core_fonts_encoding).decod
+e("latin-1")
+           ~~~~~~~~~~~^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'latin-1' codec can't 
+encode character '\u2014' 
+in position 13: ordinal 
+not in range(256)
+
+The above exception was 
+the direct cause of the 
+following exception:
+
+Traceback (most recent 
+call last):
+  File "<string>", line 9, 
+in safe_build
+    func()
+    ~~~~^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 153, in 
+build_how_it_works
+    cover_page(p,
+    ~~~~~~~~~~^^^
+        "Energy M&A 
+Scraper",
+        
+^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "site coverage 
+strategy, agents, and 
+output structure."
+        ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^
+    )
+    ^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 63, in 
+cover_page
+    p.multi_cell(0, 8, 
+subtitle, align="C")
+    ~~~~~~~~~~~~^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+281, in wrapper
+    return fn(*args, 
+**kwargs)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\deprecation.py", 
+line 36, in wrapper
+    return fn(*args, 
+**kwargs)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+4891, in multi_cell
+    text = 
+self.normalize_text(text)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+5683, in normalize_text
+    raise FPDFUnicodeEncodi
+ngException(
+    ...<3 lines>...
+    ) from error
+fpdf.errors.FPDFUnicodeEnco
+dingException: Character 
+"ù" at index 13 in text is 
+outside the range of 
+characters supported by 
+the font used: 
+"helvetica". Please 
+consider using a Unicode 
+font.
+Traceback (most recent 
+call last):
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+5681, in normalize_text
+    return text.encode(self
+.core_fonts_encoding).decod
+e("latin-1")
+           ~~~~~~~~~~~^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'latin-1' codec can't 
+encode character '\u2014' 
+in position 20: ordinal 
+not in range(256)
+
+The above exception was 
+the direct cause of the 
+following exception:
+
+Traceback (most recent 
+call last):
+  File "<string>", line 9, 
+in safe_build
+    func()
+    ~~~~^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 334, in 
+build_enterprise_strategy
+    new_page(p, hdr_title)
+    ~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 49, in 
+new_page
+    add_header(p, 
+header_title)
+    
+~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 35, in 
+add_header
+    p.cell(0, 9, 
+title[:90])
+    
+~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+281, in wrapper
+    return fn(*args, 
+**kwargs)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\deprecation.py", 
+line 36, in wrapper
+    return fn(*args, 
+**kwargs)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+3910, in cell
+    text = 
+self.normalize_text(text)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+5683, in normalize_text
+    raise FPDFUnicodeEncodi
+ngException(
+    ...<3 lines>...
+    ) from error
+fpdf.errors.FPDFUnicodeEnco
+dingException: Character 
+"ù" at index 20 in text is 
+outside the range of 
+characters supported by 
+the font used: 
+"helveticaB". Please 
+consider using a Unicode 
+font.
+Traceback (most recent 
+call last):
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+5681, in normalize_text
+    return text.encode(self
+.core_fonts_encoding).decod
+e("latin-1")
+           ~~~~~~~~~~~^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'latin-1' codec can't 
+encode character '\u2014' 
+in position 17: ordinal 
+not in range(256)
+
+The above exception was 
+the direct cause of the 
+following exception:
+
+Traceback (most recent 
+call last):
+  File "<string>", line 9, 
+in safe_build
+    func()
+    ~~~~^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 497, in 
+build_ai_brain_plan
+    new_page(p, hdr_title)
+    ~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 49, in 
+new_page
+    add_header(p, 
+header_title)
+    
+~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\energy_scraper\generate
+_reports.py", line 35, in 
+add_header
+    p.cell(0, 9, 
+title[:90])
+    
+~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+281, in wrapper
+    return fn(*args, 
+**kwargs)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\deprecation.py", 
+line 36, in wrapper
+    return fn(*args, 
+**kwargs)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+3910, in cell
+    text = 
+self.normalize_text(text)
+  File "C:\Users\harsh\OneD
+rive\Desktop\Scraper Trial 
+Run\test_venv\Lib\site-pack
+ages\fpdf\fpdf.py", line 
+5683, in normalize_text
+    raise FPDFUnicodeEncodi
+ngException(
+    ...<3 lines>...
+    ) from error
+fpdf.errors.FPDFUnicodeEnco
+dingException: Character 
+"ù" at index 17 in text is 
+outside the range of 
+characters supported by 
+the font used: 
+"helveticaB". Please 
+consider using a Unicode 
+font.
+Building How It Works...
+FAILED How It Works
+Building Enterprise Strategy...
+FAILED Enterprise Strategy
+Building AI Brain Plan...
+FAILED AI Brain Plan

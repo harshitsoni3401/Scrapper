@@ -1,0 +1,272 @@
+﻿=== SHEET NAMES ===
+['Upstream', 'Midstream', 'OFS', 'R&M', 'P&U', 'JV & Partnerships', 'Reports', 'Review Queue', 'Rejected by AI', 'Website Processing Log', 'Issue and Solution', 'Summary Dashboard', 'User Feedback for AI Learning']
+
+===== [Upstream] : 13 rows =====
+  H: Greenland Energy Company (NASDAQ: GLND) Secures a Strategic Agreement for Advanced Rig Capacity to Support the Onshore O
+     Buyer=nan | Seller=nan | Conf=0.9
+  H: Roland Commences Venezuela Mineral Rights Acquisition - GlobeNewswire
+     Buyer=Roland | Seller=nan | Conf=0.8
+  H: BASF Sells $291 Million Stake in Harbour Energy - WSJ
+     Buyer=nan | Seller=BASF | Conf=0.9
+  H: 80 MileΓÇÖs Jameson Stake Valued at US$148m as Greenland Energy Lists on NASDAQ - tipranks.com
+     Buyer=nan | Seller=Greenland Energy | Conf=0.8
+  H: Kodiak Gas Services: $24 Million Permian Basin Compression Asset Acquisition - Pulse 2.0
+     Buyer=Kodiak Gas Services | Seller=nan | Conf=0.8
+  H: 80 MileΓÇÖs Jameson Stake Valued at US$104m as Greenland Energy Lists on Nasdaq - tipranks.com
+     Buyer=nan | Seller=Greenland Energy | Conf=0.8
+  H: SG Americas Securities Boosts EQT Corporation Stake - National Today
+     Buyer=SG Americas Securities | Seller=EQT Corporation | Conf=0.8
+  H: White & Case advises Etu Energias on US$310 million acquisition of upstream Angolan assets - White & Case LLP
+     Buyer=Etu Energias | Seller=nan | Conf=0.8
+  H: Axiom Oil and Gas Seeks Portfolio Streamlining Through Asset Sale - AD HOC NEWS
+     Buyer=nan | Seller=Axiom Oil and Gas | Conf=0.8
+  H: Vision Oil & Gas acquisition expands its reach beyond Permian Basin - MSN
+     Buyer=Vision Oil & Gas | Seller=nan | Conf=0.9
+  H: Libya signs energy deal with US oil giant Chevron for offshore exploration - Anadolu Ajans─▒
+     Buyer=Chevron | Seller=Libya | Conf=0.8
+  H: Kosmos Energy Ltd Stock: Analyst Upgrades and Asset Sales Drive Recent Gains Amid Offshore Explorati - AD HOC NEWS
+     Buyer=nan | Seller=Kosmos Energy Ltd | Conf=0.8
+  H: Etu Energias Acquires Block 14/14K Stakes in Chariot-Backed Deal - African Energy Chamber
+     Buyer=Etu Energias | Seller=Chariot | Conf=0.8
+
+===== [Midstream] : 1 rows =====
+  H: Washington State Investment Board buys Rs 59 crore worth Mahanagar Gas shares; Motilal Oswal MF picks up... - moneycontr
+     Buyer=Washington State Investment Board, Motil | Seller=unknown | Conf=0.9
+
+===== [OFS] : 1 rows =====
+  H: Fort Washington Investment Advisors Acquires Stake in Tidewater Inc. - National Today
+     Buyer=Fort Washington Investment Advisors | Seller=Tidewater Inc. | Conf=0.95
+
+===== [R&M] : 0 rows =====
+
+===== [P&U] : 31 rows =====
+  H: Integrated Power Services (IPS) Acquires ENA Electronics Inc. - sg.finance.yahoo.com
+     Buyer=Integrated Power Services | Seller=ENA Electronics Inc. | Conf=0.8
+  H: PetroΓÇæVictory to Contribute Selected Brazilian Assets in Exchange for 10.25% Ownership Stake in Azevedo & Travassos Ener
+     Buyer=Azevedo & Travassos Energia | Seller=Petro-Victory | Conf=0.8
+  H: FG Communities Reaches 80-Property Milestone with Greenville Acquisition - GlobeNewswire
+     Buyer=FG Communities | Seller=nan | Conf=0.8
+  H: Trailblazer Merger Corporation I Announces Completion of Business Combination with Cyabra Strategy, Ltd. - GlobeNewswire
+     Buyer=Trailblazer Merger Corporation I | Seller=Cyabra Strategy, Ltd. | Conf=0.8
+  H: Trump Officials in Talks With Wind Developers to Buy Back Leases - Bloomberg.com
+     Buyer=US Government | Seller=wind developers | Conf=0.8
+  H: Devon EnergyΓÇÖs Gaspar sees good things ahead, stemming from his first year and the imminent merger with Coterra Energy -
+     Buyer=Devon Energy | Seller=Coterra Energy | Conf=0.8
+  H: Carolina Long Bay wind energy firm takes Trump buyout - Coastal Review
+     Buyer=Trump | Seller=Carolina Long Bay | Conf=0.8
+  H: Octopus Energy: Majority Stake In Uplight To Scale Digitalized Grid Flexibility In North America - Pulse 2.0
+     Buyer=Octopus Energy | Seller=Uplight | Conf=0.8
+  H: Sphere 3D (NASDAQ: ANY) deepens bitcoin mining focus and plans Cathedra all-stock merger - Stock Titan
+     Buyer=Sphere 3D | Seller=Cathedra | Conf=0.5
+  H: Mako Closes Nevada Mt. Hamilton Acquisition For $40M - thedeepdive.ca
+     Buyer=Mako | Seller=nan | Conf=0.9
+  H: Perseus Takes 9.9% Stake in Aurum as Ivory Coast Becomes West AfricaΓÇÖs Gold Investment Frontier - Energy Capital & Power
+     Buyer=Perseus | Seller=Aurum | Conf=0.9
+  H: U.S. Natural Gas Gains As April Contract Expires - WSJ
+     Buyer=nan | Seller=nan | Conf=0.8
+  H: Add New Energy Expands Stake in Australian Gold Player HRZ Via Share-Funded Deal - tipranks.com
+     Buyer=Add New Energy | Seller=HRZ | Conf=0.9
+  H: Coeur MiningΓÇÖs New Gold Acquisition Boosts Output and Market Enthusiasm - stockstotrade.com
+     Buyer=Coeur Mining | Seller=nan | Conf=0.8
+  H: Coeur Mining Enters New Era of Growth Following Strategic Acquisition - AD HOC NEWS
+     Buyer=Coeur Mining | Seller=nan | Conf=0.8
+  H: Patronus Resources Advances Australian Mining Projects Following PNX Metals Acquisition - AD HOC NEWS
+     Buyer=Patronus Resources | Seller=PNX Metals | Conf=0.8
+  H: Yankuang Energy Sets Profit Safeguards in Luxi Mining Acquisition - tipranks.com
+     Buyer=Yankuang Energy | Seller=Luxi Mining | Conf=0.8
+  H: Trilegal advises Edelweiss Infrastructure, SEPL Energy on divestment of stake in 12 solar SPVs to Anzen Trust - Bar and 
+     Buyer=Anzen Trust | Seller=Edelweiss Infrastructure, SEPL Energy | Conf=0.8
+  H: Cypress Creek Doubles Portfolio With $4.5 Billion Arkansas Solar-Storage Acquisition - tipranks.com
+     Buyer=Cypress Creek | Seller=nan | Conf=0.8
+  H: Assenagon Asset Management Reduces Stake in Atmos Energy - National Today
+     Buyer=nan | Seller=Assenagon Asset Management | Conf=0.8
+  H: Hyundai Motor and SK on Name Their U.S. Battery JV ΓÇÿHSBMAΓÇÖ - Businesskorea
+     Buyer=Hyundai Motor | Seller=SK | Conf=0.8
+  H: Brookfield & La Caisse Acquire Boralex in Major Renewable Energy Deal - News and Statistics - IndexBox
+     Buyer=['Brookfield', 'La Caisse'] | Seller=Boralex | Conf=0.8
+  H: INERATEC and TERTU Establish Joint Venture T.H2 to Build a Synthetic Fuel Plant in Normandy - Fuel Cells Works
+     Buyer=INERATEC | Seller=TERTU | Conf=0.8
+  H: Blue Point energy joint venture lifts CF Industries stock amid strong rally and overbought signals - Traders Union
+     Buyer=Blue Point | Seller=CF Industries | Conf=0.8
+  H: Coal India and DVC Launch Joint Venture ΓÇô DVC CIL Power Private Limited - PSU Connect
+     Buyer=Coal India | Seller=DVC | Conf=0.8
+  H: Contango Silver & Gold (NYSE: CTGO) completes Dolly Varden merger and 50/50 ownership split - Stock Titan
+     Buyer=Contango Silver & Gold | Seller=Dolly Varden | Conf=0.9
+  H: Coal India's Joint Venture DVC CIL Power Private Limited Officially Incorporated - scanx.trade
+     Buyer=nan | Seller=nan | Conf=0.8
+  H: Torrent Power Acquires 100% Stake in Torrent Urja 47 for Γé╣5 Lakh Strategic Move - scanx.trade
+     Buyer=Torrent Power | Seller=nan | Conf=0.9
+  H: Thermax Subsidiary TBWES Secures Γé╣1600 Crore Boiler Contract for 800 MW Thermal Power Plant - scanx.trade
+     Buyer=TBWES | Seller=nan | Conf=0.9
+  H: Harbour Energy slumps as BASF sells 80m shares in placing - Sharecast.com
+     Buyer=nan | Seller=BASF | Conf=0.8
+  H: BlackRock crosses Caledonia reporting threshold with 6.55% stake - Stock Titan
+     Buyer=BlackRock | Seller=Caledonia | Conf=0.8
+
+===== [JV & Partnerships] : 1 rows =====
+  H: Formentera and INPEX Announce Strategic Partnership to Accelerate Development of AustraliaΓÇÖs Beetaloo Shale Resources ΓÇô 
+     Buyer=INPEX | Seller=Formentera | Conf=0.8
+
+===== [Review Queue] : 0 rows =====
+
+===== [Rejected by AI] : 80 rows =====
+  H: General Interest | Oil & Gas Journal
+     REASON: Auto-rejected: matches pattern 'general interest'
+  H: UK: Melgarve Cluster connection project secures consent
+     REASON: This is an operational/project development news, not a corporate transaction. The article discusses 
+  H: Neapco Holdings LLC Announces the Official Close of IFA Group Acquisition, Creating a Global Leader in Driveline Solutio
+     REASON: Non-energy sector: Automotive/Driveline Solutions
+  H: Cloud for Good Acquires EMS Consulting, Expanding Salesforce Expertise and Impact to the Financial Services Sector - PR 
+     REASON: Non-Energy Sector: The acquisition is in the software/Salesforce sector, not Energy, Power, Renewabl
+  H: Dominican Republic adds nearly 300MW of gas-fired capacity
+     REASON: OPERATIONAL: 'Adds capacity' is an operational update, not a corporate transaction.
+  H: MINEM: Arequipa, Ica and Puno are the regions with the greatest potential for investments in photovoltaic generation
+     REASON: No corporate transaction or parties identified, only regional investment potential in photovoltaic g
+  H: Cyabra Announces Completion of Business Combination with Trailblazer Merger Corp. - GlobeNewswire
+     REASON: Non-energy sector: Business combination with no clear connection to Energy, Power, Renewables, O&G, 
+  H: Activate Energy Acquisition Corp. Announces Pricing of $200,000,000 Initial Public Offering - GlobeNewswire
+     REASON: The headline describes an initial public offering (IPO), not an M&A transaction, despite being in th
+  H: Two Australia States to Offer Free Transport as Fuel Prices Rise - Bloomberg.com
+     REASON: GEOPOLITICAL/MACRO - Fuel price impact on transport policy, not an Energy/Mining sector deal
+  H: Pernod, Jack DanielΓÇÖs Maker Brown-Forman Are in Merger Talks - Bloomberg.com
+     REASON: NON-ENERGY SECTOR: Beverages, not Energy or Mining
+  H: Prosus Said to Mull Selling 10% Delivery Hero Stake to Aspex - Bloomberg.com
+     REASON: Non-energy sector, potential stake sale in food delivery company
+  H: Philippine Refiner Petron Buys Russian Crude, Eyes More If Iran War Persists - Bloomberg.com
+     REASON: The headline describes a commodity trade (buying Russian crude) rather than a corporate transaction 
+  H: Australia Plans to Underwrite Fuel Purchases by Private Firms - Bloomberg.com
+     REASON: GEOPOLITICAL/MACRO: Government policy announcement without active deal
+  H: UK-listed player secures extension for 1.5 Tcf gas prospect
+     REASON: Extension for gas prospect, not a corporate transaction. SECTOR: Energy
+  H: Trump Weighs Military Operation to Extract IranΓÇÖs Uranium
+     REASON: This is a geopolitical/macro news piece about a potential military operation and does not describe a
+  H: Citigroup dismisses report of potential US regional bank acquisition - Reuters
+     REASON: Non-energy sector, no corporate transaction mentioned, and pertains to banking industry
+  H: Nuvve Partners with OMNIA Global to Address 1GW Development Pipeline with First 50MW/75MWh Battery Energy Storage System
+     REASON: COMMENTARY/TRENDS: Partnership announcement without active deal or transaction details
+  H: Herbalife to Expand Its Personalized Nutritional Supplement Capabilities Through Planned Acquisition of Bioniq - PR News
+     REASON: Non-energy sector: Nutrition/Pharma, no relation to Energy, Power, Renewables, O&G, Mining, or Utili
+  H: Aktsiaselts Infortar own share acquisition transactions - GlobeNewswire
+     REASON: Own share acquisition transactions are not a corporate transaction with two distinct parties; it inv
+  H: SANOMA CORPORATION: ACQUISITION OF OWN SHARES 27 March 2026 - GlobeNewswire
+     REASON: Non-deal, non-energy news: Share buyback is not a corporate transaction in the energy sector.
+  H: SINEXCEL and AI.net Sign Strategic Partnership at Smart Energy Week to Accelerate Japan's Utility-scale Energy Transitio
+     REASON: COMMENTARY/TRENDS: Strategic partnership announcement without explicit M&A transaction details, and 
+  H: NatGold Digital's Appointment of ECM Capital Advisors Expands Its Global Development Network for Qualifying Gold Resourc
+     REASON: NON-DEAL: Personnel announcement, no corporate transaction mentioned, and no energy/mining sector in
+  H: Fifth Corner and Headwall Investments Expand Alamo Heights Presence with Stewart Center Acquisition - PR Newswire
+     REASON: Non-Energy Sector: The article appears to be related to a commercial real estate acquisition in Alam
+  H: accesso┬« Acquires Dexibit┬«, Establishing the First Cross Platform AI and Analytics Platform for Visitor Attractions - PR
+     REASON: NON-ENERGY SECTOR: Acquisition in Visitor Attractions, not Energy or Mining related.
+  H: Cambridge Acquisition Corp. Announces the Separate Trading - GlobeNewswire
+     REASON: Non-deal news, SEC filing likely related to a SPAC IPO, not a corporate transaction in Energy/Mining
+  H: Ilkka Oyj: Acquisition of own shares on 27 March 2026 - GlobeNewswire
+     REASON: This is a share buyback announcement, not a corporate transaction in the energy or mining sector.
+  H: accesso┬« Acquires Dexibit┬«, Establishing the First Cross Platform AI and Analytics Platform for Visitor Attractions - PR
+     REASON: NON-ENERGY SECTOR: Acquisition in Visitor Attractions, not Energy or Mining related.
+  H: Inflection Point Acquisition Corp. VI Announces Pricing of $220 Million Initial Public Offering - GlobeNewswire
+     REASON: SEC Filing, but non-energy sector (blank check company)
+  H: Leo International Precision Health AG: Mr Leo Wang, Acquisition - GlobeNewswire
+     REASON: Non-Energy Sector: Precision Health AG is related to health, not Energy, Power, Renewables, O&G, Min
+  H: Scytale Expands SOX ITGC Compliance Capabilities Following AudITech Acquisition - GlobeNewswire
+     REASON: NON-ENERGY SECTOR: ITGC Compliance, not related to Energy or Mining
+  H: Gill, Denson & Company Expands Houston Footprint with Acquisition of JG Property Tax - GlobeNewswire
+     REASON: Non-energy sector (Real Estate) acquisition
+  H: LHV Group's own share acquisition transactions - GlobeNewswire
+     REASON: This is a share acquisition by the company itself, not a corporate transaction with another party; n
+  H: HMA Acquires HealthTech Solutions, Expanding Technology Capabilities and Medicaid Expertise - PR Newswire
+     REASON: Non-Energy Sector: The article is about a acquisition in the HealthTech sector, not related to Energ
+  H: PGI Expands Its Portfolio and Global Reach Through Acquisition of Key IP Assets - PR Newswire
+     REASON: NON-ENERGY SECTORS: The article mentions acquisition of IP assets, which is not related to the Energ
+  H: DENARIUS METALS ANNOUNCES DETAILS FOR THE MARCH 31, 2026 INTEREST PAYMENTS ON ITS CONVERTIBLE UNSECURED DEBENTURES - PR 
+     REASON: NON-ENERGY SECTORS: Financial announcement for convertible debentures, not a corporate transaction o
+  H: Mitsubishi Electric, Rohm, Toshiba to Explore Merger of Power Chip Businesses - WSJ
+     REASON: The article headline suggests a potential merger, but it is exploratory in nature ('to Explore Merge
+  H: $HAREHOLDER ALERT: The M&A Class Action Firm Launches Legal Inquiry for the Merger--CTRA, WBD, NSA, and KORE - PR Newswi
+     REASON: The article appears to be related to a legal inquiry for a merger, but it does not provide details o
+  H: Suncrete and Haymaker Acquisition Corp. 4 Announce Upsizing of Private Placement from $105.5 Million to $167.1 Million a
+     REASON: This is a financing and corporate structuring announcement related to a SPAC (Special Purpose Acquis
+  H: About Blue Acquisition Corp (BACC.OQ) - Reuters
+     REASON: Non-energy news, lacks corporate transaction details and sector classification
+  H: About Bayview Acquisition Corp (BAYA.O) - Reuters
+     REASON: Non-deal news, appears to be a general information article about a company (Bayview Acquisition Corp
+  H: About Gesher Acquisition II Corp (GSHR.OQ) - Reuters
+     REASON: No specific corporate transaction mentioned; appears to be a company profile or general news, not re
+  H: About Centurion Acquisition Corp (ALFUU.OQ) - Reuters
+     REASON: Non-deal news, appears to be a company profile or information about a special purpose acquisition co
+  H: About Keen Vision Acquisition Corp (KVAC.O) - Reuters
+     REASON: Insufficient information, lacks corporate transaction details and sector classification
+  H: About RiverNorth Enhanced Pre-Merger SPAC ETF (SPCZ.N) - Reuters
+     REASON: The headline refers to an ETF (Exchange-Traded Fund) related to SPAC (Special Purpose Acquisition Co
+  H: About Inflection Point Acquisition Corp IV (MRLN.OQ) - Reuters
+     REASON: NON-ENERGY SECTORS: Inflection Point Acquisition Corp IV is a blank-check company, not directly rela
+  H: TUK Group Advances $20 Million Toronto Development Pipeline and Expands Peterborough Portfolio - GlobeNewswire
+     REASON: The news is about advancing a development pipeline and portfolio expansion, which is an operational 
+  H: About FACT II Acquisition Corp (FACT.O) - Reuters
+     REASON: No specific corporate transaction mentioned, appears to be a general news article about a company (F
+  H: German coalition weighs steps such as windfall tax to tackle surging energy costs - Reuters
+     REASON: The article discusses a potential policy response to surging energy costs, but does not mention a sp
+  H: About Ribbon Acquisition Corp (RIBB.O) - Reuters
+     REASON: Insufficient information, no clear corporate transaction or sector identification
+  H: Mitsubishi Electric, Rohm, Toshiba to Explore Merger of Power Chip Businesses - WSJ
+     REASON: The article headline suggests a potential merger, but it is still in the exploration phase, indicati
+  H: About Haymaker Acquisition Corp 4 (HYAC.A) - Reuters
+     REASON: Non-deal news, appears to be a company profile or general information, lacks specific transaction de
+  H: Why RWE could follow Total in seeking Trump US offshore wind buyout - Recharge News
+     REASON: Speculative commentary on potential future M&A without active deal announcement, ENERGY sector
+  H: Slovakia shows interest in gas from Romania's Neptun project - Reuters
+     REASON: Non-deal news: Slovakia expresses interest in potential gas supply from Romania's Neptun project, bu
+  H: About Keen Vision Acquisition Corp (KVAC.OQ) - Reuters
+     REASON: Special Purpose Acquisition Company (SPAC) news without specific energy/mining deal details; no clea
+  H: First Solar, Inc. $FSLR Stake Increased by SG Americas Securities LLC - MarketBeat
+     REASON: NON-DEAL: Stake increase is not a corporate transaction, and the article does not mention a deal or 
+  H: Wedge Capital Boosts Stake in EOG Resources - National Today
+     REASON: Stake boost is not a full corporate transaction, but rather an investment move within the Energy sec
+  H: Foreign stake in Samsung Electronics hits lowest level since October 2013 - The Korea Times
+     REASON: NON-ENERGY SECTOR: Samsung Electronics is in the Software sector, not Energy or Mining.
+  H: About Tavia Acquisition Corp (TAVIU.OQ) - Reuters
+     REASON: No specific corporate transaction mentioned, appears to be a company profile or general news, SECTOR
+  H: About Eureka Acquisition Corp (EURK.OQ) - Reuters
+     REASON: NON-ENERGY SECTORS: Eureka Acquisition Corp is a blank check company, not directly related to Energy
+  H: Exchange Traded Concepts Boosts Marathon Digital Holdings Stake - National Today
+     REASON: Stake sale, but non-corporate transaction (investment) and non-energy sector (cryptocurrency/mining)
+  H: Exchange Traded Concepts Boosts Stake in MasTec - National Today
+     REASON: Stake sale in MasTec, a non-energy sector company, classified as INFRASTRUCTURE
+  H: Fort Washington Investment Advisors Increases Stake in Valero Energy - National Today
+     REASON: Stake increase is not an M&A transaction, but rather an investment action; Energy sector
+  H: TotalEnergies Weighs Net Zero Plans After Long-Term EDF Nuclear Deal - simplywall.st
+     REASON: The headline mentions a 'Long-Term EDF Nuclear Deal', but it does not specify an acquisition, merger
+  H: ONGC, partners selling gas at $5.7/mmBtu - official - Reuters
+     REASON: Commodity trade/price reporting, no corporate transaction mentioned; SECTOR CLASSIFICATION: Oil & Ga
+  H: Hydrogen Fitness Signs Deal in Murray Hill for First NYC Location - Commercial Observer
+     REASON: NON-ENERGY SECTOR: Hydrogen Fitness is in the fitness industry, not Energy or Mining.
+  H: Sendero Wealth Management LLC Cuts ConocoPhillips Stake - National Today
+     REASON: NON-DEAL: Stake sale, but no corporate transaction details. SECTOR: ENERGY
+  H: Eastern Bank Sells 23,624 Shares of NextEra Energy, Inc. $NEE - MarketBeat
+     REASON: Auto-rejected: matches pattern 'shares of'
+  H: Fort Washington Investment Advisors Inc. OH Sells 92,403 Shares of Energy Transfer LP $ET - MarketBeat
+     REASON: Auto-rejected: matches pattern 'shares of'
+  H: Ausbil Investment Management Ltd Sells 21,233 Shares of TC Energy Corporation $TRP - MarketBeat
+     REASON: Auto-rejected: matches pattern 'shares of'
+  H: Harbour Energy shareholder BASF sells 80 million shares at 273p - Investing.com
+     REASON: This is a share sale by an existing shareholder, not a corporate transaction. It does not involve a 
+  H: PBF Energy (NYSE:PBF) SVP Trecia Canty Sells 62,999 Shares - MarketBeat
+     REASON: Non-deal, personnel update: SVP sells shares, Energy sector but not a corporate transaction
+  H: Hyundai, SK On name US battery joint venture - The Korea Herald
+     REASON: Formation of a joint venture is not considered a corporate transaction, and the article does not men
+  H: Beetaloo Basin Shale Gas Development: INPEX-Formentera JV Targets Domestic and LNG Export - News and Statistics - IndexB
+     REASON: JV formation mentioned, but article describes development targets and does not specify a corporate t
+  H: Thomas Nimbley Sells 50,000 Shares of PBF Energy (NYSE:PBF) Stock - MarketBeat
+     REASON: Auto-rejected: matches pattern 'shares of'
+  H: Fusion Fuel Highlights Royal UraniumΓÇÖs 2% NSR on Two Mineral Claims held by the Shea Creek Joint Venture, One of CanadaΓÇÖ
+     REASON: No corporate transaction mentioned, only highlighting of NSR on mineral claims. SECTOR CLASSIFICATIO
+  H: Iran hints at quitting nuclear treaty, plans new deal with BRICS allies - Malay Mail
+     REASON: GEOPOLITICAL/MACRO news, no corporate transaction or energy/mining sector deal
+  H: Hyundai, SK On finalize HSBMA for US battery JV, target Georgia launch - CHOSUNBIZ - biz.chosun.com
+     REASON: JV formation, but lacks clear indication of a corporate transaction involving a target asset in the 
+  H: Sprintex secures exclusive South Korean hydrogen deal - grafa.com
+     REASON: Insufficient information, but headline suggests potential partnership or agreement, however, lacks s
+  H: Polaris Renewable Energy (TSE:PIF) Director Marc Murnaghan Sells 10,000 Shares - MarketBeat
+     REASON: Insider trading/personnel update, not a corporate transaction in the Energy sector
+  H: 5 Best Nuclear Energy Stocks and ETFs to Buy - US News Money
+     REASON: NON-ENERGY SECTORS: Article is about investment advice for nuclear energy stocks and ETFs, not a cor

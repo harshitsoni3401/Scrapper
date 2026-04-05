@@ -1,0 +1,2 @@
+-r energy_scraper/requirements.txt
+

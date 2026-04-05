@@ -1,0 +1,74 @@
+﻿======================================================================
+  VERIFICATION: Testing all fixes against known false positives
+======================================================================
+
+ΓöÇΓöÇ FIX 1.1: is_energy_relevant() pre-filter ΓöÇΓöÇ
+  Γ£à OK:   'Best high-yield savings interest rates today' ΓåÆ False
+  Γ£à OK:   '1 No-Brainer Semiconductor Stock to Buy With $1,000 Right No' ΓåÆ False
+  Γ£à OK:   'Merck & Co. (MRK) to Acquire Terns Pharma for $6.7 Billion' ΓåÆ False
+  Γ£à OK:   'Mortgage and refinance interest rates today' ΓåÆ False
+  Γ£à OK:   'Jim Cramer on Reddit (RDDT): I Want to Buy Reddit Right Here' ΓåÆ False
+  Γ£à OK:   'McLaren Driver Tommy Pintos Partners With Priority Tire' ΓåÆ False
+  Γ£à OK:   'Gotha Cosmetics: US acquisition in the pipeline' ΓåÆ False
+  Γ£à OK:   'Novartis: $2 Billion Acquisition Of Excellergy To Expand All' ΓåÆ False
+  Γ£à OK:   'Jefferies Bullish on The Home Depot Following Mingledorff Ac' ΓåÆ False
+  Γ£à OK:   'HELOC and home equity loan rates Saturday' ΓåÆ False
+  Γ£à OK:   'Constellation reaches agreement for acquisition of Calpine' ΓåÆ True
+  Γ£à OK:   'Borr Drilling Limited - Acquisition of Five Premium Jack-Up ' ΓåÆ True
+  Γ£à OK:   'Boralex Enters into Definitive Agreement to be Acquired' ΓåÆ True
+  Γ£à OK:   'Octopus Energy Takes Majority Stake in Uplight' ΓåÆ True
+  Γ£à OK:   'Grid Connected Infrastructure Sells 100 MW Battery Energy St' ΓåÆ True
+  Γ£à OK:   'Powell Max Limited Signs Letter of Intent to Acquire Boston ' ΓåÆ True
+  Γ£à OK:   'Hungary's MOL has U.S. approval to continue NIS acquisition ' ΓåÆ True
+  Γ£à OK:   'Barrel Energy acquires Happy Traps waste-to-energy platform' ΓåÆ True
+  Γ£à OK:   'Venture Global and Vitol Announce New LNG Purchase Agreement' ΓåÆ True
+  Γ£à OK:   'Zijin Mining Group: $2.6 Billion Acquisition Of Chifeng Jilo' ΓåÆ True
+
+  Results: 20 passed, 0 failed
+
+ΓöÇΓöÇ FIX 1.4: SPAC stub headline filter ΓöÇΓöÇ
+  Γ£à OK:   'About Miluna Acquisition Corp (MMTXU.OQ) - Reuters' ΓåÆ blocked=True
+  Γ£à OK:   'About Blueport Acquisition Ltd (BPAC.OQ) - Reuters' ΓåÆ blocked=True
+  Γ£à OK:   'About Haymaker Acquisition Corp 4 (HYAC.A) - Reuters' ΓåÆ blocked=True
+  Γ£à OK:   'About Keen Vision Acquisition Corp (KVAC.O) - Reuters' ΓåÆ blocked=True
+  Γ£à OK:   '486630.KR | KB No.30 Special Purpose Acquisition Co.' ΓåÆ blocked=True
+  Γ£à OK:   'Investment Banking Scorecard' ΓåÆ blocked=True
+  Γ£à OK:   'WSJ Pro Private Equity' ΓåÆ blocked=True
+  Γ£à OK:   'Constellation reaches agreement for acquisition of Calp' ΓåÆ blocked=False
+  Γ£à OK:   'Borr Drilling Acquisition of Five Premium Jack-Up Rigs' ΓåÆ blocked=False
+
+  Results: 9 passed, 0 failed
+
+ΓöÇΓöÇ FIX 1.2: Bloomberg RSS disabled ΓöÇΓöÇ
+  Γ£à OK: Bloomberg Energy rss_url is None
+
+ΓöÇΓöÇ FIX 1.3: Yahoo Finance Google News queries ΓöÇΓöÇ
+  Γ£à OK: All 2 queries have site: prefix
+
+ΓöÇΓöÇ FIX 2.1: RenewablesNow Deals JS rendering ΓöÇΓöÇ
+  Γ£à OK: needs_js=True
+  Γ£à OK: RSS fallback = https://renewablesnow.com/rss/news
+
+ΓöÇΓöÇ FIX 2.3: Rigzone M&A secondary path ΓöÇΓöÇ
+  Γ£à OK: /news/m_and_a/ in secondary_paths
+
+ΓöÇΓöÇ FIX 2.4: Hart Energy M&A path ΓöÇΓöÇ
+  Γ£à OK: A&D path present in secondary_paths
+
+ΓöÇΓöÇ FIX 3.1: Mining & Metals sheet classification ΓöÇΓöÇ
+  Γ£à OK:   'Zijin Mining Group: $2.6 Billion Acquisition Of Ch' ΓåÆ Mining & Metals
+  Γ£à OK:   'Felix to unwrap Treasure Creek with mining acquisi' ΓåÆ Mining & Metals
+  Γ£à OK:   'Coeur Mining Enters New Era Following Strategic Ac' ΓåÆ Mining & Metals
+  Γ£à OK:   'Patronus Resources Advances Australian Mining Proj' ΓåÆ Mining & Metals
+  Γ£à OK:   'Constellation reaches agreement for acquisition of' ΓåÆ P&U
+  Γ£à OK:   'Borr Drilling Acquisition of Five Jack-Up Rigs' ΓåÆ OFS
+
+  Results: 6 passed, 0 failed
+
+ΓöÇΓöÇ FIX 3.2: WSJ RSS deduplication ΓöÇΓöÇ
+  Γ£à OK: WSJ Energy RSS Γëá WSJ Commodities RSS
+
+======================================================================
+  TOTAL: 35 passed, 0 failed
+  Γ£à ALL FIXES VERIFIED SUCCESSFULLY
+======================================================================

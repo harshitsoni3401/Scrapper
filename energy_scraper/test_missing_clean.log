@@ -1,0 +1,56 @@
+
+--- URL: https://www.businesswire.com/news/home/20260319869411/en/Kodiak-Gas-Services-Announces-Accretive-Purchase-of-Over-20000-Horsepower-in-the-Permian-Basin ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Purchase of over 20,000 horsepower compression assets from a leading oil and gas producer'}
+
+--- URL: https://www.prnewswire.com/news-releases/hawkins-lease-service-inc-family-of-businesses-expands-permian-basin-footprint-with-acquisition-of-knock-out-energy-llc-302721436.html ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Acquisition of Knock Out Energy LLC by Hawkins Lease Service Inc.'}
+
+--- URL: https://www.prnewswire.com/news-releases/borr-drilling-limited--acquisition-of-five-premium-jack-up-rigs-through-new-joint-venture-302722572.html ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Definitive agreements for acquisition of five premium jack-up rigs through a new joint venture'}
+
+--- URL: https://www.energy-pedia.com/news/france/technip-energies-invests-in-verso-energy%E2%80%99s-dezir-esaf-project-in-rouen-203281 ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Technip Energies acquires a minority equity stake in the DEZiR project through an agreement with Verso Energy'}
+
+--- URL: https://www.globenewswire.com/news-release/2026/03/23/3260396/0/en/Critical-Metals-Corp-Nasdaq-CRML-Announces-the-Successful-Acquisition-of-the-Leading-Turn-Key-Engineering-Mining-Construction-Infrastructure-Drilling-Operator-Within-Greenland-60-D.html ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Company announces acquisition of majority shareholding in 60° North Greenland ApS'}
+
+--- URL: https://renewablesnow.com/news/canadas-axium-buys-stake-in-174-2-mw-wind-farm-portfolio-in-france-1291813/ ---
+ Date Output: 2026-03-23 (in range: True)
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Company buying stake in wind farm portfolio'}
+
+--- URL: https://www.globenewswire.com/news-release/2026/03/24/3261225/0/en/GoldHaven-Expands-Magno-Project-to-Over-37-200-Hectares-with-Strategic-Cassiar-Claims-Acquisition.html ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Strategic Cassiar Claims Acquisition'}
+
+--- URL: https://www.globenewswire.com/news-release/2026/03/24/3261067/0/en/Copper-Quest-Expands-its-Kitimat-Copper-Gold-Project-on-the-Strength-of-the-AI-Generated-Porphyry-Target.html ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'Application to acquire additional claims contiguous to the Kitimat Project'}
+
+--- URL: https://expro.com.ua/novini/okko-vikupilo-prokt-ves-u-kolishnogo-ternoplskogo-chinovnika ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': "Company OKKO acquired a project from a former official, specifically a wind energy project 'ЮА Ренерджі' with plans to build a 272 MW wind farm"}
+
+--- URL: https://www.bloomberg.com/news/articles/2026-03-24/form-energy-sells-batteries-to-crusoe-to-power-new-data-centers?srnd=phx-industries-energy ---
+ Headline (Fallback): Form Energy Sells Batteries To Crusoe To Power New Data Centers
+ Date parse failed
+ Confidence: 0.8
+ AI Verification: {'is_deal': True, 'reason': 'Company Form Energy sells batteries to Crusoe for new data centers'}
+
+--- URL: https://www.globenewswire.com/news-release/2026/03/24/3261725/0/en/Comstock-Announces-Full-Year-2025-Achievements-and-Results.html ---
+ Date parse failed
+ Confidence: 0.95
+ AI Verification: {'is_deal': True, 'reason': 'AI initially rejected (purely operational news with zero M&A mentions), but Google News cross-check confirmed M&A activity'}

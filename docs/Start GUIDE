@@ -1,0 +1,33 @@
+# Implementation Plan - Start Study Guide & Venv Resolution
+
+The user requires a structured "Start Study" document to understand and run the Energy M&A Scraper project. Additionally, the standard virtual environment activation is failing because the `.venv` folder is incomplete.
+
+## User Review Required
+
+> [!IMPORTANT]
+> The `.venv` folder is missing its standard activation scripts. I recommend using the **`test_venv`** folder instead, which is fully functional, or I can recreate the `.venv` for you.
+
+## Proposed Changes
+
+### Documentation & Guidance
+
+#### [NEW] [Energy_MA_Scraper_Starter_Guide.md]
+Create a premium, comprehensive guide that includes:
+- **Project Mission**: Detailed overview of the high-precision M&A extraction goal.
+- **Architecture Map**: Visualizing how the scraper, fetcher, AI extractor, and reporting tools interact.
+- **PowerShell Quick Start**: Fixing the activation error and providing the correct sequence of commands.
+- **Command Reference**: Table of scripts for production, testing, and debugging.
+- **Data Pipeline**: Explanation of how a raw URL becomes a row in the Excel report.
+- **AI Intelligence**: Summary of the multi-model fallback and self-learning logic.
+
+### Environment Resolution
+
+#### [FIX] Virtual Environment Activation
+- Provide the corrected command to use `test_venv` which contains all necessary scripts (`Activate.ps1`).
+
+## Verification Plan
+
+### Manual Verification
+- I will verify the presence of `test_venv` scripts (already done).
+- I will provide the user with the exact text to paste into PowerShell.
+- I will ensure the Guide is formatted for clear readability and a "premium" feel.

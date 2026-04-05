@@ -1,0 +1,121 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 3431 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 740 Tm (Codex Handoff Prompt) Tj
+1 0 0 1 50 726 Tm () Tj
+1 0 0 1 50 712 Tm (Project) Tj
+1 0 0 1 50 698 Tm (Active workspace: C:\\Users\\harsh\\OneDrive\\Desktop\\Scraper Trial Run - Codex) Tj
+1 0 0 1 50 684 Tm (Backup workspace: C:\\Users\\harsh\\OneDrive\\Desktop\\Scraper Trial Run) Tj
+1 0 0 1 50 670 Tm (Goal: professionalize an async Python energy and mining M&A scraper and continue work in) Tj
+1 0 0 1 50 656 Tm (Codex.) Tj
+1 0 0 1 50 642 Tm () Tj
+1 0 0 1 50 628 Tm (Current Status) Tj
+1 0 0 1 50 614 Tm (- Standardized .venv setup and helper scripts.) Tj
+1 0 0 1 50 600 Tm (- Fixed package imports for python -m energy_scraper.main.) Tj
+1 0 0 1 50 586 Tm (- Added project_paths.py for repo-level runtime folders.) Tj
+1 0 0 1 50 572 Tm (- Reports write to reports\\runs and logs to reports\\logs.) Tj
+1 0 0 1 50 558 Tm (- Windows console encoding crashes were patched.) Tj
+1 0 0 1 50 544 Tm (- browser.py was updated for current playwright-stealth compatibility.) Tj
+1 0 0 1 50 530 Tm (- Fixed SEC-style collapsed timestamps like 2026-04-0106:20:52.) Tj
+1 0 0 1 50 516 Tm (- Local tests pass: 33 passed.) Tj
+1 0 0 1 50 502 Tm (- Live isolated checks were run for PR Newswire, BusinessWire family, and GlobeNewswire) Tj
+1 0 0 1 50 488 Tm (family.) Tj
+1 0 0 1 50 474 Tm () Tj
+1 0 0 1 50 460 Tm (Key Findings) Tj
+1 0 0 1 50 446 Tm (- PR Newswire transport works best because direct RSS works.) Tj
+1 0 0 1 50 432 Tm (- BusinessWire and GlobeNewswire are mostly fallback-driven through Google News, not) Tj
+1 0 0 1 50 418 Tm (reliable first-party extraction.) Tj
+1 0 0 1 50 404 Tm (- Without AI keys loaded, the pipeline over-accepts false positives.) Tj
+1 0 0 1 50 390 Tm (- With AI enabled from legacy env, false positives are reduced, but recall is still weak.) Tj
+1 0 0 1 50 376 Tm (- The system is not near 100 percent efficiency for these publishers yet.) Tj
+1 0 0 1 50 362 Tm () Tj
+1 0 0 1 50 348 Tm (Root Causes) Tj
+1 0 0 1 50 334 Tm (1. Repo-root .env is missing GROQ_API_KEY and GEMINI_API_KEY, while energy_scraper\\.env) Tj
+1 0 0 1 50 320 Tm (still has them.) Tj
+1 0 0 1 50 306 Tm (2. BusinessWire and GlobeNewswire lack strong publisher-specific extraction paths.) Tj
+1 0 0 1 50 292 Tm (3. Transaction classifier still confuses awards, financings, and non-M&A items with deals.) Tj
+1 0 0 1 50 278 Tm (4. Google Sheets setup is noisy unless SPREADSHEET_ID is valid and shared correctly.) Tj
+1 0 0 1 50 264 Tm () Tj
+1 0 0 1 50 250 Tm (Recommended Plan) Tj
+1 0 0 1 50 236 Tm (1. Unify environment loading so repo-root .env is the single source of truth.) Tj
+1 0 0 1 50 222 Tm (2. Add provenance tracking for every accepted item: rss, direct_html, browser, cache,) Tj
+1 0 0 1 50 208 Tm (google_news.) Tj
+1 0 0 1 50 194 Tm (3. Build publisher-specific extraction logic for PR Newswire, BusinessWire, and) Tj
+1 0 0 1 50 180 Tm (GlobeNewswire.) Tj
+1 0 0 1 50 166 Tm (4. Tighten non-M&A rejection rules for awards, financings, contracts, earnings, filings,) Tj
+1 0 0 1 50 152 Tm (and market reports.) Tj
+1 0 0 1 50 138 Tm (5. Add a benchmark harness for latest items per publisher with precision and recall) Tj
+1 0 0 1 50 124 Tm (measurement.) Tj
+1 0 0 1 50 110 Tm (6. Make Google Sheets optional and quiet when SPREADSHEET_ID is not configured.) Tj
+1 0 0 1 50 96 Tm () Tj
+1 0 0 1 50 82 Tm (Test Commands) Tj
+1 0 0 1 50 68 Tm (cd "C:\\Users\\harsh\\OneDrive\\Desktop\\Scraper Trial Run - Codex") Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Length 2287 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 740 Tm (.\\scripts\\Setup.ps1) Tj
+1 0 0 1 50 726 Tm (.\\scripts\\Test-Project.ps1) Tj
+1 0 0 1 50 712 Tm (.\\scripts\\Run-Scraper.ps1 -Start "31-03-2026" -End "01-04-2026" -Workers 1 -Sites "PR) Tj
+1 0 0 1 50 698 Tm (Newswire - Energy" -NoAggregator) Tj
+1 0 0 1 50 684 Tm (.\\scripts\\Run-Scraper.ps1 -Start "31-03-2026" -End "01-04-2026" -Workers 1 -Sites) Tj
+1 0 0 1 50 670 Tm ("BusinessWire - M&A,BusinessWire - Energy,BusinessWire - Energy O&G,BusinessWire -) Tj
+1 0 0 1 50 656 Tm (Alternative Energy" -NoAggregator) Tj
+1 0 0 1 50 642 Tm (.\\scripts\\Run-Scraper.ps1 -Start "31-03-2026" -End "01-04-2026" -Workers 1 -Sites) Tj
+1 0 0 1 50 628 Tm ("GlobeNewswire - Energy,GlobeNewswire - Oil & Gas Industries,GlobeNewswire - Renewables &) Tj
+1 0 0 1 50 614 Tm (Utilities,GlobeNewswire - Mining & Metals" -NoAggregator) Tj
+1 0 0 1 50 600 Tm () Tj
+1 0 0 1 50 586 Tm (Prompt For Next Codex Chat) Tj
+1 0 0 1 50 572 Tm (Treat C:\\Users\\harsh\\OneDrive\\Desktop\\Scraper Trial Run - Codex as the active workspace.) Tj
+1 0 0 1 50 558 Tm (Read README.md first, then inspect energy_scraper\\main.py, scraper.py, fetcher.py,) Tj
+1 0 0 1 50 544 Tm (browser.py, ai_extractor.py, config.py, and project_paths.py. The project already has a) Tj
+1 0 0 1 50 530 Tm (standardized .venv and helper scripts. Do not redo old cleanup work. Focus on) Tj
+1 0 0 1 50 516 Tm (publisher-quality benchmarking and fixes for PR Newswire, BusinessWire, and GlobeNewswire.) Tj
+1 0 0 1 50 502 Tm (First, verify the single-source environment setup and make repo-root .env the authoritative) Tj
+1 0 0 1 50 488 Tm (config. Second, instrument provenance so each accepted item records whether it came from) Tj
+1 0 0 1 50 474 Tm (RSS, direct HTML, browser, cache, or Google News. Third, build publisher-specific) Tj
+1 0 0 1 50 460 Tm (extraction improvements and tighten non-M&A rejection rules for awards, financings,) Tj
+1 0 0 1 50 446 Tm (contracts, earnings, filings, and market reports. Fourth, create a benchmark harness that) Tj
+1 0 0 1 50 432 Tm (measures precision and recall on recent items from those publishers. Make changes directly) Tj
+1 0 0 1 50 418 Tm (in the repo, run tests, run narrow live checks, and summarize findings with concrete file) Tj
+1 0 0 1 50 404 Tm (references.) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 6 0 R /MediaBox [0 0 612 792] /Contents 2 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 6 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+6 0 obj
+<< /Type /Pages /Kids [4 0 R 5 0 R] /Count 2 >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000003562 00000 n 
+0000005901 00000 n 
+0000006027 00000 n 
+0000006153 00000 n 
+0000006216 00000 n 
+trailer
+<< /Size 8 /Root 7 0 R >>
+startxref
+6265
+%%EOF

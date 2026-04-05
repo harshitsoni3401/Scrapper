@@ -1,0 +1,76 @@
+﻿=== SITES WITH DEALS ===
+  Energy-Pedia: 3 in range, 2 deals, 0 review
+  PR Newswire - Energy: 3 in range, 1 deals, 0 review
+  Energy Global: 3 in range, 3 deals, 0 review
+  OilAndGas360 - M&A: 1 in range, 1 deals, 0 review
+  Bloomberg Energy: 5 in range, 3 deals, 0 review
+  Upstream Online: 1 in range, 1 deals, 0 review
+  Yahoo Finance - M&A: 3 in range, 1 deals, 0 review
+  OilAndGas360 - E&P: 1 in range, 1 deals, 0 review
+  RenewablesNow - Solar: 2 in range, 1 deals, 0 review
+  RenewablesNow - Energy Storage: 1 in range, 1 deals, 0 review
+  OGJ - Drilling & Production: 1 in range, 1 deals, 0 review
+  SeeNews - Energy: 6 in range, 1 deals, 0 review
+
+=== ARTICLES IN RANGE BUT 0 DEALS (all rejected) ===
+  *** FT Energy: 2 in range, 0 deals - ALL REJECTED BY AI
+  *** WSJ Commodities: 4 in range, 0 deals - ALL REJECTED BY AI
+  *** Newswire.com: 9 in range, 0 deals - ALL REJECTED BY AI
+  *** Renewable Energy Magazine - Biofuels: 1 in range, 0 deals - ALL REJECTED BY AI
+  *** OGJ - Refining & Processing: 1 in range, 0 deals - ALL REJECTED BY AI
+  *** Offshore Technology: 1 in range, 0 deals - ALL REJECTED BY AI
+
+=== SITES WITH 0 ARTICLES IN DATE RANGE ===
+  GlobeNewswire - Energy
+  SEC EDGAR - S-1
+  PR Newswire - Energy
+  OilAndGas360 - Press Releases
+  Neftegaz.ru
+  Petroleum Africa
+  Recharge News
+  WSJ Energy
+  WindEurope
+  AccessNewswire - Metals & Mining
+  AccessNewswire - Oil Gas & Energy
+  AccessNewswire - Clean Technology
+  AccessNewswire - Utilities
+  OilAndGas360 - Crude Oil
+  OilAndGas360 - LNG
+  OilAndGas360 - Natural Gas
+  OilAndGas360 - Midstream
+  OilAndGas360 - Offshore
+  OilAndGas360 - Capital Markets
+  OilAndGas360 - Wind
+  OilAndGas360 - Nuclear
+  OilAndGas360 - Solar
+  OilAndGas360 - Hydrogen
+  OilAndGas360 - Carbon Capture
+  OilAndGas360 - Coal
+  OilAndGas360 - Biofuels
+  OilAndGas360 - Geothermal
+  Renewable Energy Magazine - Wind
+  Renewable Energy Magazine - Solar PV
+  Renewable Energy Magazine - Panorama
+  Renewable Energy Magazine - Storage
+  Renewable Energy Magazine - Geothermal
+  Renewable Energy Magazine - Hydrogen
+  Energy News Bulletin - O&G Operations
+  Energy News Bulletin - O&G Exploration
+  Energy News Bulletin - O&G Policy
+  Energy News Bulletin - Energy Transition
+  Energy News Bulletin - Markets
+  RenewablesNow - Wind
+  RenewablesNow - Offshore Wind
+  RenewablesNow - Hydrogen
+  RenewablesNow - Other Renewables
+  OGJ - General Interest
+  BusinessWire - M&A
+  OGJ - Exploration & Development
+  BusinessWire - Alternative Energy
+  OGJ - Pipelines & Transportation
+  SeeNews - Transport
+  GlobeNewswire - Oil & Gas Industries
+  SeeNews - Mining
+  GlobeNewswire - Renewables & Utilities
+  GlobeNewswire - Mining & Metals
+  World Oil

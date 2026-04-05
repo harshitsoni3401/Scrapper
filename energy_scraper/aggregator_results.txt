@@ -1,0 +1,23 @@
+Total unique candidates: 114
+Wire service articles (BW + PRN + GNW): 0
+
+By source:
+  Google News: 112
+  Rigzone: 2
+
+Sample headlines (first 15):
+  [Google News: site:busines] Energy Vault Announces Acquisition of 175 MW Battery Energy Storage System Project in Texa
+  [Google News: site:busines] LRE Acquires Harvey Solar, Expanding Energy Infrastructure and Community Investment in Lic
+  [Google News: site:busines] ArtIn Energy Executes $255 Million Investment from Agila Investments at a $14.58 Billion V
+  [Google News: site:busines] GulfTex Energy Closes $1.0 Billion Recapitalization, Led by Endurance Investment Partners 
+  [Google News: site:prnewsw] Mindjoin Announces Strategic Acquisition of Solteir to Expand Energy and AI Infrastructure
+  [Google News: site:prnewsw] Hull Street Energy to Acquire Two Peaking Plants in PJM, Expanding Milepost Power Portfoli
+  [Google News: energy compa] IBG Acquires 51% Stake in BlockFuel Energy, Advancing Strategic Merger to Form Unified Oil
+  [Google News: energy compa] Barrel Energy acquires Happy Traps, aiming to expand waste-to-energy platform - Waste Toda
+  [Google News: energy compa] Boralex: C$9 Billion Acquisition By Brookfield And La Caisse To Accelerate Renewable Energ
+  [Google News: energy compa] Beverage company’s energy merger leaves current shareholders with 10% - Stock Titan
+  [Google News: energy compa] Greenland Energy completes SPAC merger, to trade as GLND on Nasdaq - Investing.com
+  [Google News: energy compa] Solas Energy® US Supports Investor Consortium in $33.4 Billion AES Power Acquisition - Lel
+  [Google News: energy compa] Energy Vault Announces Acquisition of 175 MW Battery Energy Storage System Project in Texa
+  [Google News: energy compa] Georgina Energy Sets Shareholder Vote on Acquisition, Capital Reset and Dual-Track Funding
+  [Google News: energy compa] Shareholders asked to advance Devon/Coterra merger - Oklahoma Energy Today

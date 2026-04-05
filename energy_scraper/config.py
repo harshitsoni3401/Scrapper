@@ -1,0 +1,1741 @@
+"""
+config.py — Enterprise configuration for the Energy M&A Scraper.
+
+Contains:
+  • 34 target websites with per-site metadata
+  • M&A keyword lists (Strong / Medium / Other) with compiled regex
+  • ENERGY-ONLY relevance filter (rejects insurance, pharma, tech etc.)
+  • Industry and sector classification mappings
+"""
+
+import re
+
+# =============================================================================
+# TARGET WEBSITES
+# =============================================================================
+
+TARGET_SITES = [
+    {
+        'name': 'Energy-Pedia',
+        'url': 'https://www.energy-pedia.com/articles.aspx?filter1=1&filter2=0',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'custom_selectors': {'headline': "a[href*='/news/']", 'sidebar': "a[href*='energy-pediaopportunities.com']"},
+    },
+    {
+        'name': 'PR Newswire - Energy',
+        'url': 'https://www.prnewswire.com/news-releases/energy-latest-news/energy-latest-news-list/',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://www.prnewswire.com/rss/energy-latest-news/energy-latest-news-list.rss',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[aria-label='Next'], li.next a",
+        'google_news_queries': [
+            'site:prnewswire.com energy acquisition OR acquires OR buys OR merger',
+            'site:prnewswire.com energy investment OR divestiture OR sells OR purchase',
+        ],
+        'secondary_paths': [
+            '/news-releases/financial-services-latest-news/',
+        ],
+    },
+    {
+        'name': 'FT Energy',
+        'url': 'https://www.ft.com/energy',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+    },
+    {
+        'name': 'GlobeNewswire - Energy',
+        'url': 'https://www.globenewswire.com/search/tag/Energy',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], li.next a, a.pagination-next",
+        'google_news_queries': [
+            'site:globenewswire.com energy acquisition OR acquires OR buys OR merger',
+            'site:globenewswire.com energy investment OR divestiture OR sells OR purchase',
+        ],
+    },
+    {
+        'name': 'SEC EDGAR - S-1',
+        'url': 'https://www.sec.gov/cgi-bin/browse-edgar?company=&CIK=&type=S-1&owner=include&count=40&action=getcurrent',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Energy Global',
+        'url': 'https://www.energyglobal.com/news/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - M&A',
+        'url': 'https://www.oilandgas360.com/category/mergers-acquisitions-divestitures/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://www.oilandgas360.com/category/mergers-acquisitions-divestitures/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Press Releases',
+        'url': 'https://www.oilandgas360.com/press-releases/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'Bloomberg Energy',
+        'url': 'https://www.bloomberg.com/topics/energy',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:bloomberg.com energy acquisition OR merger',
+            'site:bloomberg.com energy acquires OR buys oil gas',
+            'site:bloomberg.com energy deal OR divestiture',
+        ],
+    },
+    {
+        'name': 'Neftegaz.ru',
+        'url': 'https://neftegaz.ru/news/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://neftegaz.ru/rss/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], a[class*='pagination__next']",
+        'translate_body': True,
+    },
+    {
+        'name': 'WindEurope',
+        'url': 'https://windeurope.org/news/all-our-news/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+    },
+    {
+        'name': 'Newswire.com',
+        'url': 'https://www.newswire.com/newsroom',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Petroleum Africa',
+        'url': 'https://www.petroleumafrica.com/news/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://www.petroleumafrica.com/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'Upstream Online',
+        'url': 'https://www.upstreamonline.com/latest',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button:has-text('Load more'), a:has-text('Load more'), [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Recharge News',
+        'url': 'https://www.rechargenews.com/latest',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button:has-text('Load more'), a:has-text('Load more'), [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'WSJ Energy',
+        'url': 'https://www.wsj.com/news/business/energy-oil-gas',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': 'https://feeds.content.dowjones.io/public/rss/mw_energy',
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:wsj.com energy acquisition OR merger deal',
+            'site:wsj.com oil gas acquires OR buys',
+        ],
+    },
+    {
+        'name': 'WSJ Commodities',
+        'url': 'https://www.wsj.com/news/markets/oil-gold-commodities-futures',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': 'https://feeds.content.dowjones.io/public/rss/mw_commodity',
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Newsfilter - M&A',
+        'url': 'https://newsfilter.io/latest/merger-and-acquisitions',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 5,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'custom_selectors': {'headline': "span[style*='font-weight: 500']", 'date': "span[style*='color: rgb(153, 153, 153)']"},
+    },
+    {
+        'name': 'Reuters - Deals',
+        'url': 'https://www.reuters.com/markets/deals/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:reuters.com energy acquisition OR merger deal',
+            'site:reuters.com oil gas acquisition OR divestiture',
+            'site:reuters.com renewable energy acquisition OR stake sale',
+        ],
+    },
+    {
+        'name': 'Yahoo Finance - M&A',
+        'url': 'https://finance.yahoo.com/news/',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:finance.yahoo.com oil gas energy acquisition OR merger deal',
+            'site:finance.yahoo.com renewable energy acquires OR buys',
+        ],
+    },
+    {
+        'name': 'AccessNewswire - Metals & Mining',
+        'url': 'https://www.accessnewswire.com/newsroom/industry/metals-and-mining',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:accessnewswire.com mining metals acquisition OR merger OR stake',
+            'site:accessnewswire.com lithium copper gold acquisition OR deals',
+        ],
+    },
+    {
+        'name': 'AccessNewswire - Oil Gas & Energy',
+        'url': 'https://www.accessnewswire.com/newsroom/industry/oil-gas-and-energy',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:accessnewswire.com oil gas energy acquisition OR merger',
+            'site:accessnewswire.com energy divestiture OR stake OR deal',
+        ],
+    },
+    {
+        'name': 'AccessNewswire - Clean Technology',
+        'url': 'https://www.accessnewswire.com/newsroom/industry/clean-technology',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:accessnewswire.com clean technology renewable acquisition OR merger',
+            'site:accessnewswire.com solar wind hydrogen acquisition OR deal',
+        ],
+    },
+    {
+        'name': 'AccessNewswire - Utilities',
+        'url': 'https://www.accessnewswire.com/newsroom/industry/utilities',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'scroll',
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:accessnewswire.com utility utilities acquisition OR merger OR stake',
+            'site:accessnewswire.com power grid energy acquisition OR deal',
+        ],
+    },
+    {
+        'name': 'OilAndGas360 - E&P',
+        'url': 'https://www.oilandgas360.com/category/exploration-production/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/exploration-production/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Crude Oil',
+        'url': 'https://www.oilandgas360.com/category/crude-oil/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/crude-oil/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Natural Gas',
+        'url': 'https://www.oilandgas360.com/category/natural-gas/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/natural-gas/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - LNG',
+        'url': 'https://www.oilandgas360.com/category/lng/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/lng/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Midstream',
+        'url': 'https://www.oilandgas360.com/category/midstream/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/midstream/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Offshore',
+        'url': 'https://www.oilandgas360.com/category/offshore/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/offshore/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Capital Markets',
+        'url': 'https://www.oilandgas360.com/category/capital-markets/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/capital-markets/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Nuclear',
+        'url': 'https://www.oilandgas360.com/category/nuclear/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/nuclear/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Wind',
+        'url': 'https://www.oilandgas360.com/category/wind/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/wind/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Solar',
+        'url': 'https://www.oilandgas360.com/category/solar/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/solar/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Hydrogen',
+        'url': 'https://www.oilandgas360.com/category/hydrogen/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/hydrogen/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Carbon Capture',
+        'url': 'https://www.oilandgas360.com/category/carbon-capture/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/carbon-capture/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Coal',
+        'url': 'https://www.oilandgas360.com/category/coal/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/coal/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Geothermal',
+        'url': 'https://www.oilandgas360.com/category/geothermal/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/geothermal/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'OilAndGas360 - Biofuels',
+        'url': 'https://www.oilandgas360.com/category/biofuels/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.oilandgas360.com/category/biofuels/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'Renewable Energy Magazine - Panorama',
+        'url': 'https://www.renewableenergymagazine.com/panorama',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com acquisition OR acquires OR merger OR divestiture',
+            'site:renewableenergymagazine.com solar wind energy deal OR buys OR stake',
+        ],
+    },
+    {
+        'name': 'Renewable Energy Magazine - Wind',
+        'url': 'https://www.renewableenergymagazine.com/wind',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com wind acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'Renewable Energy Magazine - Solar PV',
+        'url': 'https://www.renewableenergymagazine.com/pv_solar',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com solar acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'Renewable Energy Magazine - Biofuels',
+        'url': 'https://www.renewableenergymagazine.com/biofuels',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com biofuel OR hydrogen acquisition OR merger',
+        ],
+    },
+    {
+        'name': 'Renewable Energy Magazine - Hydrogen',
+        'url': 'https://www.renewableenergymagazine.com/hydrogen',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com hydrogen acquisition OR merger OR electrolyzer deal',
+        ],
+    },
+    {
+        'name': 'Renewable Energy Magazine - Storage',
+        'url': 'https://www.renewableenergymagazine.com/storage',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com storage battery BESS acquisition OR merger',
+        ],
+    },
+    {
+        'name': 'Renewable Energy Magazine - Geothermal',
+        'url': 'https://www.renewableenergymagazine.com/geothermal',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:renewableenergymagazine.com geothermal acquisition OR merger OR stake',
+        ],
+    },
+    {
+        'name': 'BusinessWire - M&A',
+        'url': 'https://www.businesswire.com/newsroom/subject/merger-acquisition',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:businesswire.com energy acquisition OR acquires OR merger',
+            'site:businesswire.com oil gas divestiture OR stake OR buys',
+            'site:businesswire.com renewable solar wind acquisition OR deal',
+        ],
+    },
+    {
+        'name': 'BusinessWire - Energy',
+        'url': 'https://www.businesswire.com/newsroom/industry/energy',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:businesswire.com energy oil gas acquisition OR merger OR deal',
+            'site:businesswire.com energy mining acquisition OR divestiture',
+            'site:businesswire.com energy hydrogen ammonia acquisition',
+            'site:businesswire.com energy acquisition OR acquires OR merger',
+            'site:businesswire.com energy divestiture OR stake OR buys',
+            'site:businesswire.com renewable solar wind energy deal',
+        ],
+    },
+    {
+        'name': 'Energy News Bulletin - O&G Operations',
+        'url': 'https://www.energynewsbulletin.net/category/oil-gas/operations',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Energy News Bulletin - O&G Exploration',
+        'url': 'https://www.energynewsbulletin.net/category/oil-gas/exploration',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Energy News Bulletin - O&G Policy',
+        'url': 'https://www.energynewsbulletin.net/category/oil-gas/policy',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Energy News Bulletin - Energy Transition',
+        'url': 'https://www.energynewsbulletin.net/category/energy-transition',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'Energy News Bulletin - Markets',
+        'url': 'https://www.energynewsbulletin.net/category/markets',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, [class*='load-more']",
+        'next_page_selector': None,
+    },
+    {
+        'name': 'RenewablesNow - Solar',
+        'url': 'https://renewablesnow.com/news/solar/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], li.next a",
+        'google_news_queries': [
+            'site:renewablesnow.com solar acquisition OR acquires OR merger OR stake',
+            'site:renewablesnow.com solar farm deal OR divestiture OR buys',
+            'site:renewablesnow.com sells OR acquires OR sale OR acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'RenewablesNow - Wind',
+        'url': 'https://renewablesnow.com/news/wind/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], li.next a",
+        'google_news_queries': [
+            'site:renewablesnow.com wind acquisition OR acquires OR merger OR stake',
+            'site:renewablesnow.com offshore wind deal OR divestiture',
+            'site:renewablesnow.com sells OR acquires OR sale OR acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'RenewablesNow - Offshore Wind',
+        'url': 'https://renewablesnow.com/news/offshore-wind/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], li.next a",
+        'google_news_queries': [
+            'site:renewablesnow.com offshore wind acquisition OR merger OR stake',
+            'site:renewablesnow.com sells OR acquires OR sale OR acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'RenewablesNow - Energy Storage',
+        'url': 'https://renewablesnow.com/news/energy-storage/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], li.next a",
+        'google_news_queries': [
+            'site:renewablesnow.com battery storage BESS acquisition OR merger',
+            'site:renewablesnow.com sells OR acquires OR sale OR acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'RenewablesNow - Hydrogen',
+        'url': 'https://renewablesnow.com/news/hydrogen/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], li.next a",
+        'google_news_queries': [
+            'site:renewablesnow.com hydrogen acquisition OR merger OR electrolyzer deal',
+            'site:renewablesnow.com sells OR acquires OR sale OR acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'RenewablesNow - Other Renewables',
+        'url': 'https://renewablesnow.com/news/other-renewables/',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next'], li.next a",
+        'google_news_queries': [
+            'site:renewablesnow.com geothermal biomass tidal acquisition OR merger',
+            'site:renewablesnow.com sells OR acquires OR sale OR acquisition OR merger OR stake OR divestiture',
+        ],
+    },
+    {
+        'name': 'OGJ - General Interest',
+        'url': 'https://www.ogj.com/general-interest',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.ogj.com/rss/general-interest.rss',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:ogj.com energy acquisition OR merger OR divestiture',
+        ],
+    },
+    {
+        'name': 'OGJ - Refining & Processing',
+        'url': 'https://www.ogj.com/refining-processing',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.ogj.com/rss/refining-processing.rss',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:ogj.com refining acquisition OR merger OR stake',
+        ],
+    },
+    {
+        'name': 'OGJ - Drilling & Production',
+        'url': 'https://www.ogj.com/drilling-production',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.ogj.com/rss/drilling-production.rss',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:ogj.com drilling production acquisition OR merger',
+        ],
+    },
+    {
+        'name': 'OGJ - Exploration & Development',
+        'url': 'https://www.ogj.com/exploration-development',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.ogj.com/rss/exploration-development.rss',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:ogj.com exploration acquisition OR merger OR farm-in',
+        ],
+    },
+    {
+        'name': 'OGJ - Pipelines & Transportation',
+        'url': 'https://www.ogj.com/pipelines-transportation',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.ogj.com/rss/pipelines-transportation.rss',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:ogj.com pipeline acquisition OR merger OR stake',
+        ],
+    },
+    {
+        'name': 'SeeNews - Energy',
+        'url': 'https://seenews.com/industries/energy',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:seenews.com energy acquisition OR acquires OR merger',
+            'site:seenews.com energy divestiture OR stake OR deal',
+        ],
+    },
+    {
+        'name': 'SeeNews - Mining',
+        'url': 'https://seenews.com/industries/mining',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:seenews.com mining acquisition OR merger OR stake',
+        ],
+    },
+    {
+        'name': 'SeeNews - Transport',
+        'url': 'https://seenews.com/industries/transport',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:seenews.com transport energy acquisition OR merger',
+        ],
+    },
+    {
+        'name': 'GlobeNewswire - Oil & Gas Industries',
+        'url': 'https://www.globenewswire.com/en/search/industry/Integrated%252520Oil%252520%26%252520Gas,Oil%252520%26%252520Gas%252520Producers,Oil%252520Equipment%252520%26%252520Services,Gas%252520Distribution?pageSize=10',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], li.next a, a.pagination-next",
+        'google_news_queries': [
+            'site:globenewswire.com oil gas acquisition OR acquires OR merger',
+            'site:globenewswire.com oil gas divestiture OR sells OR stake',
+        ],
+    },
+    {
+        'name': 'GlobeNewswire - Renewables & Utilities',
+        'url': 'https://www.globenewswire.com/en/search/industry/Alternative%252520Electricity,Alternative%252520Energy,Alternative%252520Fuels,Energy,Renewable%252520Energy%252520Equipment,Water?pageSize=10',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], li.next a, a.pagination-next",
+        'google_news_queries': [
+            'site:globenewswire.com renewable energy acquisition OR acquires OR merger',
+            'site:globenewswire.com solar wind utility acquisition OR divestiture',
+        ],
+    },
+    {
+        'name': 'GlobeNewswire - Mining & Metals',
+        'url': 'https://www.globenewswire.com/en/search/industry/Mining,Gold%252520Mining,General%252520Mining,Industrial%252520Metals%252520%26%252520Mining,Copper,Exploration%2520%26%2520Production?pageSize=10',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], li.next a, a.pagination-next",
+        'google_news_queries': [
+            'site:globenewswire.com mining acquisition OR acquires OR merger',
+            'site:globenewswire.com mining metals divestiture OR stake OR buys',
+        ],
+    },
+    {
+        'name': 'Reuters - Energy',
+        'url': 'https://www.reuters.com/business/energy/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], a.next",
+        'google_news_queries': [
+            'site:reuters.com energy acquisition OR merger OR divestiture',
+            'site:reuters.com energy acquires OR buys OR sells deal',
+        ],
+    },
+    {
+        'name': 'Offshore Technology',
+        'url': 'https://www.offshore-technology.com/news/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://www.offshore-technology.com/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'google_news_queries': [
+            'site:offshore-technology.com acquisition OR merger OR stake sale',
+        ],
+    },
+    {
+        'name': 'World Oil',
+        'url': 'https://worldoil.com/news',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://worldoil.com/rss',
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, [class*='load-more'], a.load-more",
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:worldoil.com acquisition OR merger OR divestiture',
+        ],
+    },
+    {
+        'name': 'Rigzone - All News',
+        'url': 'https://www.rigzone.com/news/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://www.rigzone.com/news/rss/rigzone_latest.aspx',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'secondary_paths': [
+            'https://www.rigzone.com/news/oil_gas_news/',
+            'https://www.rigzone.com/news/lng_gas/',
+            'https://www.rigzone.com/news/m_and_a/',
+        ],
+        'google_news_queries': [
+            'site:rigzone.com acquisition OR merger OR divestiture OR stake',
+        ],
+    },
+    {
+        'name': 'BNamericas - News',
+        'url': 'https://www.bnamericas.com/en/list/news/1',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], a.next, a[aria-label='Next']",
+        'google_news_queries': [
+            'site:bnamericas.com energy acquisition OR merger OR divestiture',
+        ],
+    },
+    {
+        'name': 'BOE Report',
+        'url': 'https://boereport.com/category/oil-and-gas-news-headlines/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': 'https://boereport.com/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a.nextpostslink, a[rel='next']",
+    },
+    {
+        'name': 'CSP Daily News - M&A',
+        'url': 'https://www.cspdailynews.com/mergers-acquisitions',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+    },
+    {
+        'name': 'Bloomberg All News',
+        'url': 'https://www.bloomberg.com/latest?utm_source=homepage&utm_medium=web&utm_campaign=latest',
+        'needs_js': True,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': None,
+        'google_news_queries': [
+            'site:bloomberg.com energy acquisition OR merger OR stake',
+            'site:bloomberg.com oil gas acquires OR buys deal',
+        ],
+    },
+    {
+        'name': 'Expro - Ukrainian Energy',
+        'url': 'https://expro.com.ua/novini',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'translate_body': True,
+    },
+    {
+        'name': 'E24 - Energy',
+        'url': 'https://e24.no/energi-og-klima',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a.next, a[rel='next']",
+        'translate_body': True,
+    },
+    {
+        'name': 'BusinessWire - Energy O&G',
+        'url': 'https://www.businesswire.com/newsroom/industry/energy/oil-gas',
+        'needs_js': False,
+        'is_paywall': True,
+        'max_pages': 1,
+        'rss_url': None,
+        'pagination_type': None,
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], a.next",
+        'google_news_queries': [
+            'site:businesswire.com energy oil gas acquisition OR merger OR deal',
+            'site:businesswire.com oil gas divestiture OR stake OR buys',
+        ],
+    },
+    {
+        'name': 'BusinessWire - Alternative Energy',
+        'url': 'https://www.businesswire.com/portal/site/home/news/industry/?vnsId=31022',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': None,
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': "a[rel='next'], a.next",
+    },
+    {
+        'name': 'Hart Energy',
+        'url': 'https://www.hartenergy.com/news/',
+        'needs_js': True,
+        'is_paywall': False,
+        'max_pages': 3,
+        'rss_url': None,
+        'pagination_type': 'load_more',
+        'load_more_selector': "button.load-more, a.load-more, [class*='load-more'], [class*='loadmore']",
+        'next_page_selector': None,
+        'secondary_paths': [
+            '/energy-market-transactions/acquisitions-and-divestitures/',
+            '/energy-market-transactions/mergers/',
+            '/energy-market-transactions/joint-ventures/',
+            '/energy-market-transactions/markets/',
+            '/energy-market-transactions/financing/',
+            '/energy-market-transactions/debt/',
+            '/energy-market-transactions/equity/',
+            '/upstream/exploration-production/',
+            '/upstream/offshore/',
+            '/upstream/shale-plays/',
+            '/upstream/critical-minerals/',
+            '/upstream/power-generation',
+            '/alternative-energies/renewables/',
+            '/alternative-energies/hydrogen/',
+            '/alternative-energies/nuclear/',
+            '/alternative-energies/wind/',
+            '/alternative-energies/solar/',
+            '/alternative-energies/energy-storage/',
+            '/midstream-energy-infrastructure/pipelines/',
+            '/midstream-energy-infrastructure/gathering-and-processing/',
+            '/technology-and-innovation/carbon-management/',
+            '/technology-and-innovation/ccs-ccus/',
+        ],
+        'google_news_queries': [
+            'site:hartenergy.com acquisition OR merger OR divestiture',
+            'site:hartenergy.com acquires OR buys OR sells energy deal',
+        ],
+    },
+    {
+        'name': 'Mercom India',
+        'url': 'https://www.mercomindia.com/',
+        'needs_js': False,
+        'is_paywall': False,
+        'max_pages': 2,
+        'rss_url': 'https://www.mercomindia.com/feed/',
+        'pagination_type': 'next_link',
+        'load_more_selector': None,
+        'next_page_selector': 'a.next, a.nextpostslink',
+    },
+]
+
+
+
+
+
+
+TARGET_URLS = [{"url": s["url"], "name": s["name"]} for s in TARGET_SITES]
+
+# =============================================================================
+# M&A KEYWORDS
+# =============================================================================
+
+STRONG_INDICATORS = [
+    # ── Core M&A verbs ──
+    "acquire", "acquires", "acquired", "acquiring", "acquisition",
+    "merger", "merge", "merges", "merged", "merges with", "merges operations with",
+    "divest", "divests", "divested", "divestiture",
+    "takeover", "buyout", "buy out", "buys out",
+    "buys", "bought", "to buy",
+    "sells", "sold", "sale of",
+    "purchases", "purchased", "purchase",
+    "purchase agreement", "stake sale",
+    "majority stake", "minority stake", "stake",
+    # ── International / Multi-lingual M&A verbs ──
+    "викупило", "придбало", "купило", "продало", "vykupylo", "prydbalo", "kupylo", "prodalo", # Ukrainian
+    "adquiere", "adquisición", "compra", "compró", "vendió", # Spanish
+    "achète", "acquisition", "rachete", "acheté", # French
+    "kauft", "übernahme", "übernimmt", "verkauft", # German
+    "acquista", "acquisizione", # Italian
+    # ── Farm-in / Farm-out ──
+    "farm-out", "farmout", "farm-in", "farmin",
+    "farm in", "farm out", "farmed",
+    # ── Control & Ownership ──
+    "takes over", "takes control of", "gains control of",
+    "secures ownership of", "gains majority in",
+    "completes acquisition of", "announces acquisition",
+    "announces acquisition of", "reveals acquisition of",
+    "launches acquisition of", "begins acquisition of",
+    "commences merger with", "initiates merger with",
+    "proposes merger with", "declares merger with",
+    "asset acquisition", "asset purchase", "asset sale",
+    # ── Joins / Combines / Integrates ──
+    "joins", "combines", "integrates", "consolidates", "absorbs",
+    "combines with", "integrates with", "consolidates with",
+    "amalgamates", "amalgamates with", "incorporates",
+    "unites with",
+    # ── Secures / Gains / Procures ──
+    "secures", "secures deal with",
+    "gains", "procures", "obtains",
+    "invests in", "investment",
+    # ── Partners / JV / Alliance ──
+    "partners with", "partners",
+    "forms alliance", "forms alliance with", "forms strategic alliance with",
+    "forms joint venture", "forms joint venture with",
+    "creates joint venture", "creates joint venture with",
+    "establishes joint venture with", "establishes partnership",
+    "establishes partnership with",
+    "enters joint venture", "enters joint venture with",
+    "enters into agreement with",
+    "joins forces", "joins forces with",
+    "allies with", "affiliates with", "collaborates with",
+    "develops partnership with",
+    "signs partnership with",
+    "forms partnership with",
+    "joint venture", "jv",
+    "strategic partnership",
+    # ── Signs / Approves / Finalizes / Completes ──
+    "signs", "signs deal", "signs deal with",
+    "approves", "approves merger with",
+    "finalizes", "finalizes merger with", "finalizes deal",
+    "completes", "completes deal", "closes", "closes deal",
+    "executes", "executes agreement with",
+    # ── Disposes / Transfers / Offloads ──
+    "dispose", "disposes", "disposal",
+    "transfers", "exchanges", "trades", "swaps",
+    "offloads", "liquidates", "dissolves",
+    "shuts down", "winds up", "terminates",
+    "ends", "separates", "splits", "breaks up",
+    "relinquish",
+    # ── Spin-off / Carve-out ──
+    "spin off", "spinoff", "spin-off",
+    "carve out", "carve-out", "demerger",
+    "subsidiary",
+    # ── MoU / LOI / LOA ──
+    "mou", "memorandum of understanding",
+    "loi", "letter of intent",
+    "loa", "letter of award",
+    # ── Awards / Licenses / Agreements ──
+    "agreement", "awarded", "award", "awards",
+    "license", "concession",
+    "adds",
+    # ── Bid / Offer ──
+    "bid for", "offer to buy", "deal worth",
+    # ── Expand ──
+    "expands",
+    # ── Acquires assets ──
+    "acquires assets of",
+    # ── Peak Level: Structural Shifts ──
+    "farm-in", "farm-out", "farmin", "farmout",
+    "participation agreement", "concession agreement",
+    "production sharing", "psc", "psa",
+    "structural shift", "portfolio optimization",
+    "strategic review", "explores sale", "mulls sale",
+    "divestment program", "asset sale program",
+]
+
+MEDIUM_INDICATORS = [
+    "interest", "equity",
+    "bid", "offer",
+    "restructure", "restructuring",
+    "recapitalization", "refinancing",
+    "ipo", "listing",
+    "placement", "fundraise", "fundraising",
+]
+
+OTHER_INDICATORS = [
+    "plans", "considers", "explores", "evaluates",
+    "reviews", "assesses", "mulls", "weighs",
+    "preliminary", "potential", "possible",
+]
+
+def _compile_keywords(kw_list):
+    escaped = [r"\b" + re.escape(kw.lower()) + r"\b" for kw in kw_list]
+    return re.compile("|".join(escaped), re.IGNORECASE)
+
+RE_STRONG = _compile_keywords(STRONG_INDICATORS)
+RE_MEDIUM = _compile_keywords(MEDIUM_INDICATORS)
+RE_OTHER  = _compile_keywords(OTHER_INDICATORS)
+
+# Context-aware transaction signal patterns. These let us keep generic verbs
+# like "signs" while only trusting them when attached to structural deal nouns.
+_STRUCTURAL_TRANSACTION_PATTERNS = [
+    r"\b(acquisition|acquire|acquires|acquired)\b",
+    r"\b(merger|merge|merged|merges)\b",
+    r"\b(divestiture|divest|divests|asset sale|asset purchase)\b",
+    r"\b(stake sale|stake in|majority stake|minority stake)\b",
+    r"\b(joint venture|strategic partnership|mou|memorandum of understanding|loi|letter of intent)\b",
+    r"\b(farm-?in|farm-?out|buyout|takeover)\b",
+    r"\b(closes|completes|finalizes)\s+(an?\s+)?(acquisition|merger|joint venture|stake (purchase|sale)|asset (sale|purchase))\b",
+    r"\b(signs?|signed|launch(?:es|ed))\s+(an?\s+)?(acquisition agreement|merger agreement|joint venture|asset sale|asset purchase)\b",
+]
+_STRUCTURAL_TRANSACTION_RE = re.compile("|".join(_STRUCTURAL_TRANSACTION_PATTERNS), re.IGNORECASE)
+
+_WEAK_GENERIC_PATTERNS = [
+    r"\b(signs?|signed|deal|deals|agreement|agreements|secures?|secured)\b",
+    r"\b(launch(?:es|ed)|completes?|completed|closes?|closed|finalizes?|finalized)\b",
+]
+_WEAK_GENERIC_RE = re.compile("|".join(_WEAK_GENERIC_PATTERNS), re.IGNORECASE)
+
+_NON_STRUCTURAL_CONTEXT_PATTERNS = [
+    r"\b(loan|credit facility|debt facility|financing|funding|bond|notes offering|equity offering)\b",
+    r"\b(supply deal|supply agreement|framework agreement|service contract|purchase order|offtake)\b",
+    r"\b(earnings|financial results|quarterly results|revenue|profit|guidance|eps|ebitda)\b",
+    r"\b(product launch|launches new|unveils|introduces)\b",
+    r"\b(market report|market forecast|cagr|market analysis|research report)\b",
+]
+_NON_STRUCTURAL_CONTEXT_RE = re.compile("|".join(_NON_STRUCTURAL_CONTEXT_PATTERNS), re.IGNORECASE)
+
+
+def transaction_signal_profile(headline: str, body_text: str = "") -> dict:
+    text = f"{headline or ''} {body_text or ''}".lower()
+    structural = bool(_STRUCTURAL_TRANSACTION_RE.search(text))
+    weak_generic = bool(_WEAK_GENERIC_RE.search(text))
+    negative_context = bool(_NON_STRUCTURAL_CONTEXT_RE.search(text))
+    strong_keyword = bool(RE_STRONG.search(text))
+    medium_keyword = bool(RE_MEDIUM.search(text))
+    return {
+        "structural": structural,
+        "weak_generic": weak_generic,
+        "negative_context": negative_context,
+        "strong_keyword": strong_keyword,
+        "medium_keyword": medium_keyword,
+        "weak_only": weak_generic and not structural,
+    }
+
+# =============================================================================
+# ENERGY-SECTOR RELEVANCE FILTER
+# =============================================================================
+# A deal MUST match at least one energy keyword to pass.
+# Deals that ONLY match exclusion terms (insurance, pharma, etc.) are rejected.
+
+ENERGY_KEYWORDS = [
+    # Oil & Gas
+    "oil", "gas", "petroleum", "crude", "shale", "drilling", "upstream",
+    "downstream", "midstream", "refinery", "lng", "pipeline", "natural gas",
+    "offshore", "onshore", "subsea", "wellhead", "oilfield", "e&p",
+    "exploration", "production", "petrochemical", "ngl", "condensate",
+    "tight oil", "deepwater", "permian", "bakken", "eagle ford",
+    "haynesville", "marcellus", "north sea",
+    # Power / Utilities
+    "electricity", "power plant", "utility", "utilities", "grid",
+    "transmission", "distribution", "substation", "power generation",
+    # Renewable Energy
+    "solar", "wind", "hydro", "tidal", "biomass", "geothermal",
+    "renewable", "green hydrogen", "ev charger", "cleantech",
+    "wind farm", "solar farm", "wind turbine", "photovoltaic",
+    "energy storage", "battery storage", "fuel cell", "battery",
+    "bess", "peaking", "peaker",
+    # Mining & Metals (energy-related)
+    "lithium", "copper", "nickel", "cobalt", "mining", "metals",
+    "iron ore", "rare earth", "uranium", "gold", "silver", "zinc",
+    # Equipment & Services
+    "jack-up", "jack up", "jackup", "rig", "rigs", "horsepower",
+    "compressor", "turbine", "transformer", "inverter",
+    "esaf", "saf", "biofuel", "biodiesel",
+    # Carbon / Environment
+    "carbon capture", "ccus", "ccs", "carbon credit",
+    "emissions", "decarbonization",
+    # Hydrogen
+    "hydrogen", "ammonia", "electrolyzer", "electrolysis",
+    # Nuclear
+    "nuclear", "reactor", "enrichment",
+    # General energy
+    "energy", "power", "fuel", "megawatt", "mw", "gw", "kwh", "mwh",
+    "boe", "barrel", "mcf", "ip portfolio", "renfuel", "infrastructure", "grid",
+    # Tool-Specific Energy Descriptors (Natively catches unlisted companies like Etu Energias)
+    "offshore block", "offshore blocks", "working interest", "working interests",
+    "produced water", "farm-in", "farm-out", "acreage", "mineral rights",
+    "oil and gas assets", "hydrocarbon", "hydrocarbons", "shale assets",
+    "exploration and production", "exploration rights", "production sharing contract",
+    "transmission lines", "substation", "utility scale", "power capacity",
+    "oilfield services", "drillship", "fpsos", "fpso", "floating production",
+    "terminal assets", "storage terminals",
+]
+
+# =============================================================================
+# FIX 1.1: RESTORED ENERGY PRE-FILTER (was disabled in v4.0, returned True always)
+# =============================================================================
+# The v4.0 approach of "let AI decide everything" caused massive false-positive
+# flood: savings rate articles, pharma M&A, cosmetics pipelines, Cramer commentary.
+# This two-tier gate now:
+#   1. Hard-rejects known non-energy sectors BEFORE burning an API call
+#   2. Requires at least one energy keyword to pass
+# The AI still makes the final M&A-vs-not-M&A decision downstream.
+
+_HARD_REJECT_KEYWORDS = [
+    # Pharma / Biotech / MedTech
+    "pharma", "biotech", "medtech", "drug", "vaccine", "clinical trial",
+    "genomics", "therapeutic", "oncology", "fda approval",
+    # Real estate / Finance noise
+    "real estate", "mortgage", "savings rate", "credit card", "insurance",
+    "high-yield savings", "refinance rate", "home equity", "heloc",
+    # Consumer / Retail
+    "cosmetics", "fashion", "apparel", "retail", "restaurant", "beverage",
+    "food", "nutrition", "grocery", "luxury goods", "home depot",
+    # Tech (non-energy)
+    "semiconductor", "gpu", "data center", "social media", "streaming",
+    "software", "saas", "machine learning", "telecom", "telecommunications",
+    # Infrastructure (non-energy)
+    "hvac", "cement", "packaging", "elevator",
+    # Entertainment / Sports
+    "sports", "boxing", "film", "media", "entertainment", "nascar",
+    "formula 1", "nfl", "nba", "mlb",
+    # Tool-Specific Market Noise (Eliminates daily roundups that mistakenly hit M&A keywords)
+    "morning bid", "market update", "daily brief", "commodity wrap",
+    "stocks to watch", "market report", "asian shares", "wall st opens",
+]
+
+RE_ENERGY = re.compile("|".join(r"\b" + re.escape(kw) + r"\b" for kw in ENERGY_KEYWORDS), re.I)
+RE_HARD_REJECT = re.compile(
+    "|".join(r"\b" + re.escape(kw) + r"\b" for kw in _HARD_REJECT_KEYWORDS), re.I
+)
+
+_REPORT_BYPASS_RE = re.compile(
+    r"\b("
+    r"acquire|acquires|acquired|acquisition|merge|merger|merged|divest|divestiture|"
+    r"takeover|buyout|buy(?:s|ing)?|sell(?:s|ing)?|sale of|stake sale|"
+    r"joint venture|memorandum of understanding|letter of intent|"
+    r"farm-?in|farm-?out|asset purchase|asset sale"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+def is_energy_relevant(headline: str, body_text: str = "") -> bool:
+    """
+    v5.0 Update: Restored energy pre-filter gate.
+    
+    Two-tier check:
+      1. Hard-reject non-energy sectors (pharma, retail, sports, etc.)
+      2. Require at least one energy keyword match
+    
+    The AI extractor still makes the final M&A classification downstream.
+    This gate prevents wasting API calls on obviously irrelevant content.
+    """
+    combined = (headline + " " + body_text).lower()
+
+    # Too short to classify
+    if len(combined.strip()) < 20:
+        return False
+
+    # Hard-reject known non-energy sectors before burning an API call
+    if RE_HARD_REJECT.search(combined):
+        return False
+
+    # Must match at least one energy keyword
+    return bool(RE_ENERGY.search(combined))
+
+# =============================================================================
+# INDUSTRY & SECTOR CLASSIFICATION
+# =============================================================================
+
+INDUSTRY_MAPPING = {
+    "Oil & Gas": [
+        "oil", "gas", "petroleum", "crude", "shale", "drilling",
+        "upstream", "downstream", "midstream", "refinery", "lng", "pipeline",
+        "natural gas", "offshore", "onshore", "subsea", "oilfield",
+        "e&p", "ngl", "condensate", "tight oil", "deepwater",
+    ],
+    "Power / Utilities": [
+        "electricity", "power plant", "utility", "utilities", "grid",
+        "transmission", "distribution", "substation", "power generation",
+    ],
+    "Renewable Energy": [
+        "solar", "wind", "hydro", "tidal", "biomass", "geothermal",
+        "renewable", "green hydrogen", "ev charger", "cleantech",
+        "wind farm", "solar farm", "wind turbine", "photovoltaic",
+        "energy storage", "battery", "fuel cell",
+    ],
+    "Mining & Metals": [
+        "lithium", "copper", "nickel", "cobalt", "mining", "metals",
+        "iron ore", "zinc", "gold", "silver", "rare earth", "uranium",
+    ],
+    "Nuclear": [
+        "nuclear", "reactor", "enrichment", "uranium",
+    ],
+    "Hydrogen / Ammonia": [
+        "hydrogen", "ammonia", "electrolyzer", "electrolysis",
+    ],
+    "Carbon / CCUS": [
+        "carbon capture", "ccus", "ccs", "direct air capture",
+        "carbon credit", "decarbonization",
+    ],
+}
+
+SECTOR_MAPPING = {
+    "Generation": [
+        "coal", "hydro", "nuclear", "power generation",
+        "natural gas", "gas turbine",
+    ],
+    "Solar": ["solar pv", "solar panel", "solar farm", "photovoltaic", "solar"],
+    "Wind": ["wind farm", "wind turbine", "offshore wind", "onshore wind", "wind energy", "wind"],
+    "Upstream": ["exploration", "production", "upstream", "e&p", "wildcat", "appraisal"],
+    "Midstream": ["pipeline", "midstream", "gathering", "processing plant", "lng terminal"],
+    "Downstream": ["refinery", "refining", "petrochemical", "downstream"],
+    "LNG": ["lng", "liquefied natural gas", "liquefaction", "regasification"],
+    "Storage": ["battery", "lithium ion", "flow battery", "flywheel", "fuel cell", "energy storage"],
+    "CCUS": ["direct air capture", "carbon capture", "ccus", "ccs"],
+    "Hydrogen": ["blue hydrogen", "green hydrogen", "hydrogen"],
+    "Ammonia": ["ammonia"],
+    "Geothermal": ["geothermal"],
+    "Mining": ["lithium mining", "copper mining", "nickel mining", "cobalt mining", "mining"],
+    "Electric Vehicles": ["charging infrastructure", "electric vehicles", "ev charging"],
+    "Distribution": ["electricity distribution", "power distribution"],
+    "Nuclear": ["nuclear", "reactor", "enrichment"],
+    "Biofuels": ["sustainable aviation fuel", "saf", "biodiesel", "ethanol", "biofuel", "biomass"],
+}
+
+
+def determine_industry_and_sector(text: str) -> tuple:
+    t = text.lower()
+
+    industry = "Energy"  # Default for energy scraper
+    for ind, keywords in INDUSTRY_MAPPING.items():
+        if any(kw in t for kw in keywords):
+            industry = ind
+            break
+
+    sector = "General"
+    for sec, keywords in SECTOR_MAPPING.items():
+        if any(kw in t for kw in keywords):
+            sector = sec
+            break
+
+    return industry, sector
+
+
+# =============================================================================
+# SHEET CLASSIFICATION — routes deals to the correct industry sheet
+# =============================================================================
+
+# Keywords are checked against (headline + body + industry + sector).lower()
+_SHEET_KEYWORDS = {
+    "Upstream": [
+        "upstream", "exploration", "e&p", "wildcat", "appraisal well",
+        "production assets", "producing assets", "shale", "deepwater",
+        "shallow water", "tight oil", "oil field", "oilfield",
+        "working interest", "mineral rights", "royalty interest",
+        "reserves", "barrels of oil", "boe", "boe/d", "mboe",
+        "acreage", "basin", "permian", "bakken", "eagle ford",
+        "marcellus", "haynesville", "utica", "appalachian",
+        "north sea", "gulf of mexico", "offshore block",
+        "onshore block", "concession", "farm-in", "farm-out",
+        "farmout", "farmin", "drill", "well",
+        "crude oil", "condensate", "ngl",
+    ],
+    "Midstream": [
+        "midstream", "pipeline", "gathering", "gas processing",
+        "processing plant", "fractionation", "fractionator",
+        "lng terminal", "lng export", "lng import", "liquefaction",
+        "regasification", "floating lng", "flng", "fsru",
+        "gas storage", "cavern", "salt dome", "tank terminal",
+        "terminal", "export terminal", "import terminal",
+        "compressor station", "metering", "interconnect",
+        "natural gas liquids", "ngl pipeline", "crude pipeline",
+        "gas pipeline", "water pipeline", "transport",
+        "throughput", "tariff", "take-or-pay",
+    ],
+    "OFS": [
+        "oilfield service", "field service", "drilling service",
+        "well service", "completion service", "workover",
+        "hydraulic fracturing", "fracking", "frac",
+        "pressure pumping", "cementing", "coiled tubing",
+        "wireline", "logging", "directional drilling",
+        "rig", "drill rig", "jack-up", "jackup",
+        "semi-submersible", "drillship", "platform",
+        "subsea", "subsea tree", "manifold", "umbilical",
+        "riser", "bop", "blowout preventer",
+        "epc", "engineering procurement", "construction contractor",
+        "fabrication", "installation", "commissioning",
+        "seismic", "survey", "inspection",
+        "well intervention", "well testing", "artificial lift",
+        "esp", "rod pump", "gas lift",
+        "tubular", "casing", "tubing", "drill pipe",
+        "proppant", "sand", "chemical", "specialty chemical",
+        "water management", "produced water", "flowback",
+        "ofs", "service company",
+    ],
+    "R&M": [
+        "refinery", "refining", "petrochemical", "downstream",
+        "marketing", "fuel retail", "gas station",
+        "retail fuel", "service station", "convenience store",
+        "lubricant", "base oil", "asphalt", "bitumen",
+        "cracker", "ethylene", "propylene", "polyethylene",
+        "polypropylene", "olefins", "aromatics",
+        "naphtha", "gasoline", "diesel", "jet fuel",
+        "kerosene", "fuel oil", "bunker",
+        "blending", "additive", "wax",
+        "r&m", "retail and marketing",
+    ],
+    "P&U": [
+        "power", "utility", "utilities", "electricity",
+        "grid", "transmission", "distribution", "substation",
+        "power generation", "power plant", "generating station",
+        "solar", "photovoltaic", "pv", "solar farm", "solar panel",
+        "wind", "wind farm", "wind turbine", "offshore wind", "onshore wind",
+        "hydro", "hydroelectric", "hydropower", "dam",
+        "nuclear", "reactor", "enrichment", "uranium",
+        "coal", "coal plant", "coal mine",
+        "geothermal", "biomass", "biogas", "biofuel",
+        "battery", "battery storage", "energy storage",
+        "lithium", "cobalt", "nickel", "copper", "mining",
+        "dle", "direct lithium", "lithium extraction",
+        "renewable", "clean energy", "cleantech",
+        "hydrogen", "green hydrogen", "blue hydrogen",
+        "ammonia", "electrolyzer", "electrolysis", "methanol",
+        "ccus", "ccs", "carbon capture", "direct air capture",
+        "electric vehicle", "ev", "charging", "ev charging",
+        "helium", "fuel cell",
+        "sustainable aviation fuel", "saf",
+        "alternative fuel", "equipment manufacturing",
+    ],
+    "Reports": [
+        "quarterly results", "quarterly earnings", "annual report",
+        "annual results", "annual earnings", "full year results",
+        "half year results", "interim results",
+        "q1 results", "q2 results", "q3 results", "q4 results",
+        "q1 earnings", "q2 earnings", "q3 earnings", "q4 earnings",
+        "first quarter", "second quarter", "third quarter", "fourth quarter",
+        "fiscal year", "financial results", "earnings call",
+        "earnings release", "results announcement",
+        "investor day", "capital markets day", "annual general meeting",
+        "agm", "reports revenue", "reports profit", "reports loss",
+        "posts revenue", "posts profit", "posts loss",
+        "announces revenue", "announces earnings",
+        "award", "awards", "grant", "grants", "funding", "allocation", "backs", "£", "€",
+    ],
+    "JV & Partnerships": [
+        "joint venture", "jv", "partnership", "strategic alliance",
+        "alliance", "collaboration agreement", "consortium",
+        "co-development", "co-investment", "co-develop",
+        "partners with", "teaming agreement", "cooperation agreement",
+        "memorandum of understanding", "mou", "letter of intent", "loi",
+        "framework agreement", "heads of terms",
+        "forms alliance", "forms joint venture", "enters joint venture",
+        "strategic partnership", "development agreement",
+    ],
+}
+
+# ── Hard Reject Blocklist ──
+# ANY deal matching one of these phrases is a non-energy sector deal and must be
+# discarded BEFORE any AI call. Zero credits are spent on these.
+# Add new non-energy sectors here — never come back to fix code for a specific industry again.
+NON_ENERGY_HARD_REJECT = {
+    # Hospitality / Real Estate
+    "hotel", "motel", "resort", "sheraton", "hilton", "marriott", "westin",
+    "hyatt", "radisson", "ihg", "four seasons", "lodging", "hospitality group",
+    "reit", "real estate investment trust", "commercial real estate", "apartment complex",
+    "office building", "shopping mall", "retail property",
+    # Pharma / Healthcare / Biotech
+    "pharmaceutical", "pharma acquisition", "biotech acquisition", "biotechnology company",
+    "drug maker", "clinical trial", "fda approval", "fda clearance",
+    "hospital system", "health system", "healthcare provider", "medical device company",
+    "dental", "veterinary", "animal health",
+    # Consumer / Food / Retail
+    "grocery", "supermarket", "food chain", "restaurant chain", "fast food",
+    "fashion brand", "apparel brand", "footwear brand", "luxury goods",
+    "beauty brand", "cosmetics brand", "skincare brand",
+    # Media / Entertainment / Sports
+    "streaming service", "video game company", "esports", "sports franchise",
+    "nfl team", "nba team", "premier league club", "football club",
+    "music label", "film studio", "entertainment company",
+    # Unrelated Technology
+    "semiconductor company", "chip maker", "microchip maker",
+    "social media platform", "e-commerce platform", "ride-sharing",
+    # Pure Finance (non-energy)
+    "insurance company", "life insurer", "bank merger", "credit card company",
+}
+
+
+def classify_deal_sheet(headline: str, body: str = "",
+                        industry: str = "", sector: str = "") -> tuple:
+    """Classify a deal into one of the industry sheets, Reports, or JV & Partnerships.
+
+    Returns a tuple: (sheet_name, confident).
+      - sheet_name: one of 'Upstream', 'Midstream', 'OFS', 'R&M', 'P&U',
+                    'Mining & Metals', 'JV & Partnerships', 'Reports'.
+      - confident: True if keywords matched, False if defaulting (AI fallback needed).
+
+    Check order: Reports → JV → OFS → Upstream/Midstream/R&M → Mining → P&U.
+    """
+    combined = f"{headline} {body} {industry} {sector}".lower()
+
+    # ── Hard reject: non-energy sectors (zero AI credits spent) ──
+    for phrase in NON_ENERGY_HARD_REJECT:
+        if phrase in combined:
+            return ("REJECT", True)
+
+    # ── If strong M&A verbs exist, bypass Reports entirely ──
+    is_strong_ma = bool(_REPORT_BYPASS_RE.search(headline))
+
+    # ── Reports first (unless it's explicitly a strong M&A deal) ──
+    if not is_strong_ma:
+        for kw in _SHEET_KEYWORDS["Reports"]:
+            if kw in combined:
+                return ("Reports", True)
+
+    # ── JV & Partnerships (route before general industry sheets) ──
+    jv_hits = sum(1 for kw in _SHEET_KEYWORDS["JV & Partnerships"] if kw in combined)
+    if jv_hits >= 2:
+        return ("JV & Partnerships", True)
+
+    # ── Score each O&G sheet by keyword hit count ──
+    scores = {}
+    for sheet in ("Upstream", "Midstream", "OFS", "R&M"):
+        hits = sum(1 for kw in _SHEET_KEYWORDS[sheet] if kw in combined)
+        if hits > 0:
+            scores[sheet] = hits
+
+    if scores:
+        # Return sheet with most keyword hits — confident
+        return (max(scores, key=scores.get), True)
+
+    # ── Mining & Metals → Route to P&U (per user preference) ──
+    _MINING_KEYWORDS = [
+        "mining", "mine", "gold mine", "copper mine", "lithium mine",
+        "iron ore", "zinc", "nickel", "cobalt", "rare earth", "gold",
+        "silver", "mineral", "quarry", "smelter", "tailings",
+        "mining & metals", "metals",
+    ]
+    mining_hits = sum(1 for kw in _MINING_KEYWORDS if kw in combined)
+    if mining_hits >= 1:
+        return ("P&U", True)  # Mining goes to P&U per user preference
+
+    # ── P&U: if any P&U keyword matches ──
+    for kw in _SHEET_KEYWORDS["P&U"]:
+        if kw in combined:
+            return ("P&U", True)
+
+    # Default: P&U but NOT confident — AI fallback should be triggered
+    return ("P&U", False)
+
+import json
+from pathlib import Path
+_dynamic_sites_path = Path(__file__).parent / "dynamic_sites.json"
+if _dynamic_sites_path.exists():
+    try:
+        with open(_dynamic_sites_path, "r", encoding="utf-8") as f:
+            dynamic_sites = json.load(f)
+            if isinstance(dynamic_sites, list):
+                TARGET_SITES.extend(dynamic_sites)
+    except Exception as e:
+        print(f"Warning: Failed to load dynamic_sites.json: {e}")
+

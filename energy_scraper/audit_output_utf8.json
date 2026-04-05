@@ -1,0 +1,938 @@
+﻿Sheets found: ['Upstream', 'Midstream', 'OFS', 'R&M', 'P&U', 'JV & Partnerships', 'Reports', 'Review Queue', 'Rejected by AI', 'Website Processing Log', 'Issue and Solution', 'Summary Dashboard', 'User Feedback for AI Learning']
+EXTRACTED_DATA_START
+[
+  {
+    "Headline": "Independence Energy and Contango Oil and Gas Company Complete Merger, Forming Crescent Energy Company - businesswire.com",
+    "Buyer": "Contango Oil and Gas Company",
+    "Seller": "Independence Energy",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "BusinessWire - Energy",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 2
+  },
+  {
+    "Headline": "Stryten Energy Strengthens Battery Production Capacity with Acquisition of Tulip Richardson Manufacturing - GlobeNewswire",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Stryten Energy Strengthens Battery Production Capacity with Acquisition of Tulip Richardson Manufacturing - GlobeNewswire",
+    "Value": "Undisclosed",
+    "Source": "GlobeNewswire - Search",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 3
+  },
+  {
+    "Headline": "Woodside Energy, Santos in Merger Talks to Create Global Energy Giant - WSJ",
+    "Buyer": "Woodside Energy",
+    "Seller": "Santos",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "WSJ Energy",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 4
+  },
+  {
+    "Headline": "Powell Max Limited Signs Non-Binding Letter of Intent to Acquire The Boston Solar Company - GlobeNewswire",
+    "Buyer": "Powell Max",
+    "Seller": "The Boston Solar Company",
+    "Asset": "The Boston Solar Company",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:globenewswire.com energy acquisitio",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 5
+  },
+  {
+    "Headline": "ASP Isotopes Completes Well Drilling Required for Phase 1 - GlobeNewswire",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:globenewswire.com energy acquisitio",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 6
+  },
+  {
+    "Headline": "The Home Depot Subsidiary SRS Distribution Enters into Agreement to Acquire Wholesale HVAC Distributor Mingledorff's - PR Newswire",
+    "Buyer": "SRS Distribution",
+    "Seller": "Mingledorff's",
+    "Asset": "Wholesale HVAC Distributor",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com energy acquisition O",
+    "Date": "2026-03-24",
+    "Sheet": "Upstream",
+    "RowIndex": 7
+  },
+  {
+    "Headline": "VisionWave Secures Exclusive Pathway to Offshore Energy Blocks LB-4 & LB-5 In Liberia - GlobeNewswire",
+    "Buyer": "VisionWave",
+    "Seller": "nan",
+    "Asset": "Offshore Energy Blocks LB-4 & LB-5",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:globenewswire.com energy acquisitio",
+    "Date": "2026-03-24",
+    "Sheet": "Upstream",
+    "RowIndex": 8
+  },
+  {
+    "Headline": "Orezone Gold Completes Strategic Acquisition of Casa Berardi Gold Mine and Quebec Exploration Portfolio - GlobeNewswire",
+    "Buyer": "Orezone Gold",
+    "Seller": "Unnamed",
+    "Asset": "Casa Berardi Gold Mine and Quebec Exploration Portfolio",
+    "Value": "Undisclosed",
+    "Source": "Google News: site:globenewswire.com mining acquisitio",
+    "Date": "2026-03-25",
+    "Sheet": "Upstream",
+    "RowIndex": 9
+  },
+  {
+    "Headline": "Frontera Energy Reports Loss While Pursuing Divestiture of Exploration & Production Assets - Finance Colombia",
+    "Buyer": "nan",
+    "Seller": "Frontera Energy",
+    "Asset": "Exploration & Production Assets",
+    "Value": "Undisclosed",
+    "Source": "Google News: energy asset sale OR divestiture",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 10
+  },
+  {
+    "Headline": "Brazil's president floats joint venture between Mexican state oil company Pemex and Petrobras - Mexico News Daily",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: oil gas joint venture",
+    "Date": "2026-03-23",
+    "Sheet": "Upstream",
+    "RowIndex": 11
+  },
+  {
+    "Headline": "AZIO Secures Binding Customer Deposits Covering ~42% of $108M GPU Infrastructure Pipeline - PR Newswire",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "GPU Infrastructure Pipeline",
+    "Value": "US$108.00 million",
+    "Source": "Google News (dated): site:prnewswire.com energy acquisition O",
+    "Date": "2026-03-24",
+    "Sheet": "Midstream",
+    "RowIndex": 2
+  },
+  {
+    "Headline": "Alliance Solution Group Acquires Stryder Distribution, Expanding Its Platform Nationally - GlobeNewswire",
+    "Buyer": "Alliance Solution Group",
+    "Seller": "Stryder Distribution",
+    "Asset": "Stryder Distribution",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:globenewswire.com oil gas acquires ",
+    "Date": "2026-03-23",
+    "Sheet": "OFS",
+    "RowIndex": 2
+  },
+  {
+    "Headline": "Borr Drilling Limited - Acquisition of Five Premium Jack-Up Rigs through New Joint Venture - PR Newswire",
+    "Buyer": "Borr Drilling",
+    "Seller": "nan",
+    "Asset": "Five Premium Jack-Up Rigs",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com energy acquisition O",
+    "Date": "2026-03-23",
+    "Sheet": "OFS",
+    "RowIndex": 3
+  },
+  {
+    "Headline": "Paratus Energy Services Ltd. Announces Sale of its Jack-up Business - PR Newswire",
+    "Buyer": "Borr Drilling",
+    "Seller": "Paratus Energy Services",
+    "Asset": "Jack-up Business",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com energy acquisition O",
+    "Date": "2026-03-23",
+    "Sheet": "OFS",
+    "RowIndex": 4
+  },
+  {
+    "Headline": "Barrel Energy acquires Happy Traps, aiming to expand waste-to-energy platform - Waste Today -",
+    "Buyer": "Barrel Energy",
+    "Seller": "Happy Traps",
+    "Asset": "Happy Traps waste-to-energy platform",
+    "Value": "Undisclosed",
+    "Source": "Google News: energy company acquisition OR merger",
+    "Date": "2026-03-25",
+    "Sheet": "OFS",
+    "RowIndex": 5
+  },
+  {
+    "Headline": "Hover Energy acquires premier solar company, Shine Development Partners - PR Newswire",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Hover Energy acquires premier solar company, Shine Development Partners - PR Newswire",
+    "Value": "Undisclosed",
+    "Source": "PR Newswire - Energy",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 2
+  },
+  {
+    "Headline": "Filed by the Registrant - SEC.gov - SEC.gov",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Filed by the Registrant - SEC.gov - SEC.gov",
+    "Value": "Undisclosed",
+    "Source": "SEC EDGAR - S-1",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 3
+  },
+  {
+    "Headline": "GulfTex Energy Closes $1.0 Billion Recapitalization, Led by Endurance Investment Partners - businesswire.com",
+    "Buyer": "Endurance Investment Partners",
+    "Seller": "GulfTex Energy",
+    "Asset": "equity stake",
+    "Value": "US$1.00 billion",
+    "Source": "BusinessWire - Energy",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 4
+  },
+  {
+    "Headline": "Sembcorp Is in Discussions to Buy Australia\u2019s Alinta Energy - Bloomberg.com",
+    "Buyer": "Sembcorp",
+    "Seller": "Alinta Energy",
+    "Asset": "Alinta Energy",
+    "Value": "Undisclosed",
+    "Source": "Bloomberg Energy",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 5
+  },
+  {
+    "Headline": "Octopus Energy Takes Majority Stake in Uplight to Scale Flexible, Digitalized Grids Across North America - businesswire.com",
+    "Buyer": "Octopus Energy",
+    "Seller": "Uplight",
+    "Asset": "Uplight",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:businesswire.com renewable energy a",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 6
+  },
+  {
+    "Headline": "United States: TotalEnergies Signs Agreements with U.S. Department of Interior to End its U.S. Offshore Wind Projects - businesswire.com",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "United States: TotalEnergies Signs Agreements with U.S. Department of Interior to End its U.S. Offshore Wind Projects - businesswire.com",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:businesswire.com renewable energy a",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 7
+  },
+  {
+    "Headline": "INVL Renewable Energy Fund I signs agreement for the sale of projects under development in Poland - GlobeNewswire",
+    "Buyer": "nan",
+    "Seller": "INVL Renewable Energy Fund I",
+    "Asset": "projects under development in Poland",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:globenewswire.com oil gas acquires ",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 8
+  },
+  {
+    "Headline": "Fusion Fuel Approves Appointment of Uranium Investor James - GlobeNewswire",
+    "Buyer": "Fusion Fuel",
+    "Seller": "James (Uranium Investor)",
+    "Asset": "Uranium Investment Expertise",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:globenewswire.com energy acquisitio",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 9
+  },
+  {
+    "Headline": "Molten Salt Solutions Signs Strategic Agreements to Supply Enriched Lithium for Fusion Energy - PR Newswire",
+    "Buyer": "Molten Salt Solutions",
+    "Seller": "nan",
+    "Asset": "Enriched Lithium",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com renewable energy acq",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 10
+  },
+  {
+    "Headline": "Summit Explore Signs Term Sheet with Power Minerals to Develop Multi-Salar Lithium Project in Argentina - PR Newswire",
+    "Buyer": "Summit Explore",
+    "Seller": "Power Minerals",
+    "Asset": "Multi-Salar Lithium Project in Argentina",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com oil gas acquires OR ",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 11
+  },
+  {
+    "Headline": "Green Cement Market to Reach US$ 74.4 Billion by 2033 Expands Amid Decarbonization and Sustainable Construction Demand as per PMR - PR Newswire",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Green Cement Market to Reach US$ 74.4 Billion by 2033 Expands Amid Decarbonization and Sustainable Construction Demand as per PMR - PR Newswire",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com renewable energy acq",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 12
+  },
+  {
+    "Headline": "esVolta Secures $139.6 Million Project Financing for 300 MWh Boxcar Energy Storage Project in Texas - PR Newswire",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "Boxcar Energy Storage Project",
+    "Value": "US$139.60 million",
+    "Source": "Google News (dated): site:prnewswire.com renewable energy acq",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 13
+  },
+  {
+    "Headline": "Doral Renewables Secures Nearly $900 Million of Financing Commitments for Construction of Cold Creek Solar + Storage Project - PR Newswire",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "Cold Creek Solar + Storage Project",
+    "Value": "US$900.00",
+    "Source": "Google News (dated): site:prnewswire.com renewable energy acq",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 14
+  },
+  {
+    "Headline": "Linea Energy Closes Project Debt Financing for Watertown Solar in Michigan - PR Newswire",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Linea Energy Closes Project Debt Financing for Watertown Solar in Michigan - PR Newswire",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com renewable energy acq",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 15
+  },
+  {
+    "Headline": "Grid Connected Infrastructure Sells 100 MW Megamouth Battery Energy Storage Project in Houston to Banpu Power US - PR Newswire",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Grid Connected Infrastructure Sells 100 MW Megamouth Battery Energy Storage Project in Houston to Banpu Power US - PR Newswire",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com renewable energy acq",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 16
+  },
+  {
+    "Headline": "NextEra secures land in Texas for giant gas plant to power data centers, CEO says - Reuters",
+    "Buyer": "NextEra",
+    "Seller": "nan",
+    "Asset": "land in Texas",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:reuters.com oil gas acquisition OR ",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 17
+  },
+  {
+    "Headline": "SLB expands Nvidia partnership to develop AI infrastructure for energy sector - Reuters",
+    "Buyer": "SLB",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: site:reuters.com oil gas acquisition OR ",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 18
+  },
+  {
+    "Headline": "Natural Power supports acquisition of 42.5 MW Higher Witheven Solar Project in Cornwall - AltEnergyMag",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "Higher Witheven Solar Project",
+    "Value": "Undisclosed",
+    "Source": "Google News: solar energy acquisition OR merger",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 19
+  },
+  {
+    "Headline": "Essential Utilities Advances Toward Merger With American Water - tipranks.com",
+    "Buyer": "Essential Utilities",
+    "Seller": "American Water",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: utility company acquisition OR merger",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 20
+  },
+  {
+    "Headline": "How The Merger Debate Is Reshaping The Essential Utilities (WTRG) Investment Story - Yahoo Finance",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: utility company acquisition OR merger",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 21
+  },
+  {
+    "Headline": "Energy Vault Acquires 175 MW Battery Energy Storage Project in Texas - Mercom Capital Group",
+    "Buyer": "Energy Vault",
+    "Seller": "Mercom Capital Group",
+    "Asset": "175 MW Battery Energy Storage Project",
+    "Value": "Undisclosed",
+    "Source": "Google News: battery energy storage acquisition OR me",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 22
+  },
+  {
+    "Headline": "Octava Wins Strong Shareholder Support for Byro Mining Acquisition - tipranks.com",
+    "Buyer": "Octava",
+    "Seller": "Byro Mining",
+    "Asset": "Byro Mining",
+    "Value": "Undisclosed",
+    "Source": "Google News: mining acquisition OR merger",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 23
+  },
+  {
+    "Headline": "Greenland Energy completes SPAC merger, to trade as GLND on Nasdaq - Investing.com",
+    "Buyer": "Greenland Energy",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: energy company acquisition OR merger",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 24
+  },
+  {
+    "Headline": "Orezone completes acquisition of Casa Berardi gold mine in Quebec - Investing.com",
+    "Buyer": "Orezone",
+    "Seller": "unknown",
+    "Asset": "Casa Berardi gold mine",
+    "Value": "Undisclosed",
+    "Source": "Google News: mining acquisition OR merger",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 25
+  },
+  {
+    "Headline": "Energy Vault Announces Acquisition Of 175 MW Battery Energy Storage System Project In Texas - TradingView",
+    "Buyer": "Energy Vault",
+    "Seller": "nan",
+    "Asset": "175 MW Battery Energy Storage System Project",
+    "Value": "Undisclosed",
+    "Source": "Google News: battery energy storage acquisition OR me",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 26
+  },
+  {
+    "Headline": "Zijin Mining Takes Controlling Stake in Chifeng Gold | 2026 Mining Acquisition - News and Statistics - IndexBox",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Zijin Mining Takes Controlling Stake in Chifeng Gold | 2026 Mining Acquisition - News and Statistics - IndexBox",
+    "Value": "Undisclosed",
+    "Source": "Google News: mining acquisition OR merger",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 27
+  },
+  {
+    "Headline": "Mako Mining Completes Acquisition of Mt. Hamilton in Nevada - Yahoo Finance",
+    "Buyer": "Mako Mining",
+    "Seller": "nan",
+    "Asset": "Mt. Hamilton",
+    "Value": "Undisclosed",
+    "Source": "Google News: mining acquisition OR merger",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 28
+  },
+  {
+    "Headline": "Here's What Oklo's Acquisition of Atomic Alchemy Could Mean for Oklo's Fuel Recycling and Nuclear Energy Businesses - fool.com",
+    "Buyer": "Oklo",
+    "Seller": "Atomic Alchemy",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: nuclear energy acquisition OR merger",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 29
+  },
+  {
+    "Headline": "China\u2019s Zijin Mining clinches US$2.6b Chifeng Gold takeover in expansion drive - South China Morning Post",
+    "Buyer": "Zijin Mining",
+    "Seller": "Chifeng Gold",
+    "Asset": "nan",
+    "Value": "US$2.60 billion",
+    "Source": "Google News: mining acquisition OR merger",
+    "Date": "2026-03-23",
+    "Sheet": "P&U",
+    "RowIndex": 30
+  },
+  {
+    "Headline": "Saudi Arabia\u2019s Renewable Energy Investment Surge: Implications for Businesses in the Middle East - Middle East Briefing",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Saudi Arabia\u2019s Renewable Energy Investment Surge: Implications for Businesses in the Middle East - Middle East Briefing",
+    "Value": "Undisclosed",
+    "Source": "Google News: Middle East energy acquisition OR invest",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 31
+  },
+  {
+    "Headline": "Timken India Completes Acquisition of 26.1% Stake in Sunstreamgreen Energy - scanx.trade",
+    "Buyer": "Timken India",
+    "Seller": "Sunstreamgreen Energy",
+    "Asset": "26.1% Stake",
+    "Value": "Undisclosed",
+    "Source": "Google News: India energy acquisition OR merger",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 32
+  },
+  {
+    "Headline": "Binhai Investment Forms Deqing Joint Venture to Drive Integrated Energy Expansion - tipranks.com",
+    "Buyer": "Binhai Investment",
+    "Seller": "nan",
+    "Asset": "Deqing Joint Venture",
+    "Value": "Undisclosed",
+    "Source": "Google News: energy joint venture OR partnership",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 33
+  },
+  {
+    "Headline": "Middle East Conflict Drives Energy Shift, Reshapes Investment - Whalesbook",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: Middle East energy acquisition OR invest",
+    "Date": "2026-03-24",
+    "Sheet": "P&U",
+    "RowIndex": 34
+  },
+  {
+    "Headline": "Velto compra su segundo parque e\u00f3lico en Francia a Q Energy, sumando 37 MW a su cartera - El Economista",
+    "Buyer": "Velto",
+    "Seller": "Q Energy",
+    "Asset": "parque e\u00f3lico (37 MW)",
+    "Value": "Undisclosed",
+    "Source": "Google News: adquisici\u00f3n energ\u00eda fusi\u00f3n OR compra",
+    "Date": "2026-03-25",
+    "Sheet": "P&U",
+    "RowIndex": 35
+  },
+  {
+    "Headline": "Handal Energy Enters Joint Venture Agreement With Bumiraya Petroleum - TradingView",
+    "Buyer": "Unknown",
+    "Seller": "Unknown",
+    "Asset": "Handal Energy Enters Joint Venture Agreement With Bumiraya Petroleum - TradingView",
+    "Value": "Undisclosed",
+    "Source": "Google News: energy joint venture OR partnership",
+    "Date": "2026-03-25",
+    "Sheet": "JV & Partnerships",
+    "RowIndex": 2
+  },
+  {
+    "Headline": "Consumer Genius Accelerates Growth in North American Insurance and Auto Lending Sectors, Plans Entry into Home Services and Solar Markets - PR Newswire",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com energy acquisition O",
+    "Date": "2026-03-24",
+    "Sheet": "Review Queue",
+    "RowIndex": 2
+  },
+  {
+    "Headline": "New Pilot Explores Ways to Connect More Solar to D.C.'S Electric Grid - PR Newswire",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "solar",
+    "Value": "Undisclosed",
+    "Source": "Google News (dated): site:prnewswire.com energy acquisition O",
+    "Date": "2026-03-23",
+    "Sheet": "Review Queue",
+    "RowIndex": 3
+  },
+  {
+    "Headline": "Australia's Lynas agrees potential rare earths deal with South Korea's LS Eco Energy - Reuters",
+    "Buyer": "LS Eco Energy",
+    "Seller": "Lynas",
+    "Asset": "rare earths",
+    "Value": "Undisclosed",
+    "Source": "Google News: site:reuters.com oil gas acquisition OR ",
+    "Date": "2026-03-25",
+    "Sheet": "Review Queue",
+    "RowIndex": 4
+  },
+  {
+    "Headline": "Oil prices drop 2% as Iran considers US proposal to end war - Reuters",
+    "Buyer": "nan",
+    "Seller": "nan",
+    "Asset": "nan",
+    "Value": "Undisclosed",
+    "Source": "Google News: site:reuters.com oil gas acquisition OR ",
+    "Date": "2026-03-25",
+    "Sheet": "Review Queue",
+    "RowIndex": 5
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 2
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 3
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 4
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 5
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 6
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 7
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 8
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 9
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 10
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 11
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 12
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 13
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 14
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 15
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 16
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 17
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 18
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 19
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 20
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 21
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 22
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 23
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 24
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 25
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 26
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 27
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 28
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 29
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 30
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 31
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 32
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 33
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 34
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 35
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 36
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 37
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 38
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 39
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 40
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 41
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 42
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 43
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 44
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 45
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 46
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 47
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 48
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 49
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 50
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 51
+  },
+  {
+    "Sheet": "Website Processing Log",
+    "RowIndex": 52
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 2
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 3
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 4
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 5
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 6
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 7
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 8
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 9
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 10
+  },
+  {
+    "Sheet": "Issue and Solution",
+    "RowIndex": 11
+  },
+  {
+    "Value": "49",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 2
+  },
+  {
+    "Value": "50",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 3
+  },
+  {
+    "Value": "10",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 4
+  },
+  {
+    "Value": "0",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 5
+  },
+  {
+    "Value": "50",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 6
+  },
+  {
+    "Value": "4712",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 7
+  },
+  {
+    "Value": "138",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 8
+  },
+  {
+    "Value": "55",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 9
+  },
+  {
+    "Value": "51",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 10
+  },
+  {
+    "Value": "0",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 11
+  },
+  {
+    "Value": "4",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 12
+  },
+  {
+    "Value": "33",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 13
+  },
+  {
+    "Value": "0",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 14
+  },
+  {
+    "Value": "0",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 15
+  },
+  {
+    "Value": "1",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 16
+  },
+  {
+    "Value": "2",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 17
+  },
+  {
+    "Value": "45",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 18
+  },
+  {
+    "Value": "nan",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 19
+  },
+  {
+    "Value": "Groq API: 199 OK / 0 fails / 35 limits | Auto-approves: 0 | Corrections: 0",
+    "Sheet": "Summary Dashboard",
+    "RowIndex": 20
+  }
+]
+EXTRACTED_DATA_END

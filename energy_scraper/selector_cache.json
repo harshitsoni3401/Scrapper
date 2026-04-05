@@ -1,0 +1,34 @@
+{
+  "Newsfilter - Latest": {
+    "article_container": "div.card",
+    "headline_selector": "h2.title",
+    "link_selector": "a.card-link",
+    "date_selector": "span.date",
+    "confidence": 0.85,
+    "notes": "Selectors identified based on typical article card structure"
+  },
+  "Newsfilter - M&A": {
+    "article_container": "div.card",
+    "headline_selector": "h2.title",
+    "link_selector": "a.card-link",
+    "date_selector": "span.date",
+    "confidence": 0.95,
+    "notes": "Selectors identified based on typical news article structure"
+  },
+  "AccessNewswire - Utilities": {
+    "article_container": "div.post",
+    "headline_selector": "h2.post-title",
+    "link_selector": "h2.post-title a",
+    "date_selector": "span.post-date",
+    "confidence": 0.9,
+    "notes": "The provided HTML sample appears to be a jumbled collection of CSS styles rather than a representative sample of the site's structure. However, based on common patterns found in news websites and the limited information given, the suggested selectors are based on typical news article structures."
+  },
+  "AccessNewswire - Clean Technology": {
+    "article_container": "div.article-card",
+    "headline_selector": "h2.title a",
+    "link_selector": "h2.title a",
+    "date_selector": "span.date",
+    "confidence": 0.85,
+    "notes": "Based on the provided HTML, it appears that the article container is a div with class 'article-card'. The headline text is contained within an h2 element with class 'title' and the article link is also contained within this element. The date/time element is a span with class 'date'."
+  }
+}

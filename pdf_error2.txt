@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\test_venv\Lib\site-packages\fpdf\fpdf.py", line 5681, in normalize_text
+    return text.encode(self.core_fonts_encoding).decode("latin-1")
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2014' in position 13: ordinal not in range(256)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    try: gr.build_how_it_works()
+         ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\energy_scraper\generate_reports.py", line 150, in build_how_it_works
+    cover_page(p,
+    ~~~~~~~~~~^^^
+        "Energy M&A Scraper",
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "site coverage strategy, agents, and output structure."
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\energy_scraper\generate_reports.py", line 63, in cover_page
+    p.multi_cell(0, 8, subtitle, align="C")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\test_venv\Lib\site-packages\fpdf\fpdf.py", line 281, in wrapper
+    return fn(*args, **kwargs)
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\test_venv\Lib\site-packages\fpdf\deprecation.py", line 36, in wrapper
+    return fn(*args, **kwargs)
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\test_venv\Lib\site-packages\fpdf\fpdf.py", line 4891, in multi_cell
+    text = self.normalize_text(text)
+  File "C:\Users\harsh\OneDrive\Desktop\Scraper Trial Run\test_venv\Lib\site-packages\fpdf\fpdf.py", line 5683, in normalize_text
+    raise FPDFUnicodeEncodingException(
+    ...<3 lines>...
+    ) from error
+fpdf.errors.FPDFUnicodeEncodingException: Character "—" at index 13 in text is outside the range of characters supported by the font used: "helvetica". Please consider using a Unicode font.

@@ -1,0 +1,947 @@
+[
+  {
+    "name": "Name of the website",
+    "url": "URL",
+    "action": "What to do"
+  },
+  {
+    "name": "Energy-Pedia",
+    "url": "https://www.energy-pedia.com/articles.aspx?filter1=1&filter2=0",
+    "action": "No Change"
+  },
+  {
+    "name": "PR Newswire - Energy",
+    "url": "https://www.prnewswire.com/news-releases/energy-latest-news/energy-latest-news-list/",
+    "action": "No Change"
+  },
+  {
+    "name": "OGJ - Home",
+    "url": "https://www.ogj.com/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/news/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "FT Energy",
+    "url": "https://www.ft.com/energy",
+    "action": "No Change"
+  },
+  {
+    "name": "BNamericas - Electric Power",
+    "url": "https://www.bnamericas.com/en/tag/electric-power",
+    "action": "REMOVE"
+  },
+  {
+    "name": "BNamericas - Oil & Gas",
+    "url": "https://www.bnamericas.com/en/tag/oil--gas",
+    "action": "REMOVE"
+  },
+  {
+    "name": "BNamericas - Mining",
+    "url": "https://www.bnamericas.com/en/tag/mining--metals",
+    "action": "REMOVE"
+  },
+  {
+    "name": "GlobeNewswire - Energy",
+    "url": "https://www.globenewswire.com/search/tag/Energy",
+    "action": "No Change"
+  },
+  {
+    "name": "SEC EDGAR - S-1",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?company=&CIK=&type=S-1&owner=include&count=40&action=getcurrent",
+    "action": "No Change"
+  },
+  {
+    "name": "Mercom India",
+    "url": "https://www.mercomindia.com/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "Energy Global",
+    "url": "https://www.energyglobal.com/news/",
+    "action": "No Change"
+  },
+  {
+    "name": "BusinessWire - Energy",
+    "url": "https://www.businesswire.com/newsroom/industry/energy",
+    "action": "REMOVE"
+  },
+  {
+    "name": "BusinessWire - M&A",
+    "url": "https://www.businesswire.com/newsroom/industry/financial-services-and-capital-markets",
+    "action": "REMOVE"
+  },
+  {
+    "name": "GlobeNewswire - Search",
+    "url": "https://www.globenewswire.com/Search",
+    "action": "Remove"
+  },
+  {
+    "name": "OilAndGas360 - M&A",
+    "url": "https://www.oilandgas360.com/category/mergers-acquisitions-divestitures/",
+    "action": "No Change"
+  },
+  {
+    "name": "OilAndGas360 - Oil Gas",
+    "url": "https://www.oilandgas360.com/oil-gas/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "OilAndGas360 - Oilfield Services",
+    "url": "https://www.oilandgas360.com/oilfield-services/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "OilAndGas360 - Energy Transition",
+    "url": "https://www.oilandgas360.com/energy-transition/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "OilAndGas360 - Press Releases",
+    "url": "https://www.oilandgas360.com/press-releases/",
+    "action": "No Change"
+  },
+  {
+    "name": "Energy News Bulletin",
+    "url": "https://www.energynewsbulletin.net/category/oil-gas",
+    "action": "REMOVE"
+  },
+  {
+    "name": "Bloomberg Energy",
+    "url": "https://www.bloomberg.com/topics/energy",
+    "action": "No Change"
+  },
+  {
+    "name": "Neftegaz.ru",
+    "url": "https://neftegaz.ru/news/",
+    "action": "No Change"
+  },
+  {
+    "name": "WindEurope",
+    "url": "https://windeurope.org/news/all-our-news/",
+    "action": "No Change"
+  },
+  {
+    "name": "Newswire.com",
+    "url": "https://www.newswire.com/newsroom",
+    "action": "No Change"
+  },
+  {
+    "name": "Rigzone",
+    "url": "https://www.rigzone.com/news/finance_and_investing/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "Petroleum Africa",
+    "url": "https://www.petroleumafrica.com/news/",
+    "action": "No Change"
+  },
+  {
+    "name": "Upstream Online",
+    "url": "https://www.upstreamonline.com/latest",
+    "action": "No Change"
+  },
+  {
+    "name": "Recharge News",
+    "url": "https://www.rechargenews.com/latest",
+    "action": "No Change"
+  },
+  {
+    "name": "WSJ Energy",
+    "url": "https://www.wsj.com/news/business/energy-oil-gas",
+    "action": "No Change"
+  },
+  {
+    "name": "WSJ Commodities",
+    "url": "https://www.wsj.com/news/markets/oil-gold-commodities-futures",
+    "action": "No Change"
+  },
+  {
+    "name": "RenewablesNow Deals",
+    "url": "https://renewablesnow.com/company-news/deals/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "RenewablesNow News",
+    "url": "https://renewablesnow.com/news/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "SeeNews",
+    "url": "https://seenews.com/news/archive/2026",
+    "action": "REMOVE"
+  },
+  {
+    "name": "Renewable Energy Magazine",
+    "url": "https://www.renewableenergymagazine.com/",
+    "action": "REMOVE"
+  },
+  {
+    "name": "Newsfilter - M&A",
+    "url": "https://newsfilter.io/latest/merger-and-acquisitions",
+    "action": "No Change"
+  },
+  {
+    "name": "Newsfilter - Latest",
+    "url": "https://newsfilter.io/latest/news",
+    "action": "Remove"
+  },
+  {
+    "name": "Reuters - Deals",
+    "url": "https://www.reuters.com/markets/deals/",
+    "action": "No Change"
+  },
+  {
+    "name": "Yahoo Finance - M&A",
+    "url": "https://finance.yahoo.com/news/",
+    "action": "No Change"
+  },
+  {
+    "name": "AccessNewswire - Metals & Mining",
+    "url": "https://www.accessnewswire.com/newsroom/industry/metals-and-mining",
+    "action": "No Change"
+  },
+  {
+    "name": "AccessNewswire - Oil Gas & Energy",
+    "url": "https://www.accessnewswire.com/newsroom/industry/oil-gas-and-energy",
+    "action": "No Change"
+  },
+  {
+    "name": "AccessNewswire - Clean Technology",
+    "url": "https://www.accessnewswire.com/newsroom/industry/clean-technology",
+    "action": "No Change"
+  },
+  {
+    "name": "AccessNewswire - Utilities",
+    "url": "https://www.accessnewswire.com/newsroom/industry/utilities",
+    "action": "No Change"
+  },
+  {
+    "name": "Newswire - Bankruptcy",
+    "url": "https://www.newswire.com/newsroom/business-bankruptcy",
+    "action": "Remove"
+  },
+  {
+    "name": "Newswire - Business News",
+    "url": "https://www.newswire.com/newsroom/business-business-news",
+    "action": "Remove"
+  },
+  {
+    "name": "Newswire - Corporate Communications",
+    "url": "https://www.newswire.com/newsroom/business-corporate-communications",
+    "action": "Remove"
+  },
+  {
+    "name": "Newswire - M&A",
+    "url": "https://www.newswire.com/newsroom/business-mergers-acquisitions",
+    "action": "Remove"
+  },
+  {
+    "name": "Newswire - Energy",
+    "url": "https://www.newswire.com/newsroom/government-energy",
+    "action": "Remove"
+  },
+  {
+    "name": "Newswire - Mining",
+    "url": "https://www.newswire.com/newsroom/industries-mining",
+    "action": "Remove"
+  },
+  {
+    "name": "OilAndGas360 - E&P",
+    "url": "https://www.oilandgas360.com/category/exploration-production/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Crude Oil",
+    "url": "https://www.oilandgas360.com/category/crude-oil/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Natural Gas",
+    "url": "https://www.oilandgas360.com/category/natural-gas/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - LNG",
+    "url": "https://www.oilandgas360.com/category/lng/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Coal",
+    "url": "https://www.oilandgas360.com/category/coal/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Refined Products",
+    "url": "https://www.oilandgas360.com/category/refined-products/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Offshore",
+    "url": "https://www.oilandgas360.com/category/offshore/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Midstream",
+    "url": "https://www.oilandgas360.com/category/midstream/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Regulatory",
+    "url": "https://www.oilandgas360.com/category/regulatory/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Transportation",
+    "url": "https://www.oilandgas360.com/category/transportation/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Commodities",
+    "url": "https://www.oilandgas360.com/category/commodities/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Hydraulic Fracturing",
+    "url": "https://www.oilandgas360.com/category/hydraulic-fracturing/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Drilling",
+    "url": "https://www.oilandgas360.com/category/drilling/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Water",
+    "url": "https://www.oilandgas360.com/category/water/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Earnings",
+    "url": "https://www.oilandgas360.com/category/earnings/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Capital Markets",
+    "url": "https://www.oilandgas360.com/category/capital-markets/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Economy",
+    "url": "https://www.oilandgas360.com/category/economy/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Nuclear",
+    "url": "https://www.oilandgas360.com/category/nuclear/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Wind",
+    "url": "https://www.oilandgas360.com/category/wind/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Solar",
+    "url": "https://www.oilandgas360.com/category/solar/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Geothermal",
+    "url": "https://www.oilandgas360.com/category/geothermal/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Biofuels",
+    "url": "https://www.oilandgas360.com/category/biofuels/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Hydrogen",
+    "url": "https://www.oilandgas360.com/category/hydrogen/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Power Grid",
+    "url": "https://www.oilandgas360.com/category/power-grid/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Carbon Capture",
+    "url": "https://www.oilandgas360.com/category/carbon-capture/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Sustainability",
+    "url": "https://www.oilandgas360.com/category/sustainability/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Regulatory",
+    "url": "https://www.oilandgas360.com/category/regulatory/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - Alternative Technology",
+    "url": "https://www.oilandgas360.com/category/alternative-technology/",
+    "action": "Add the link"
+  },
+  {
+    "name": "OilAndGas360 - AI",
+    "url": "https://www.oilandgas360.com/category/artificial-intelligence-ai/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Panorama",
+    "url": "https://www.renewableenergymagazine.com/panorama",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Wind",
+    "url": "https://www.renewableenergymagazine.com/wind",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Solar_PV",
+    "url": "https://www.renewableenergymagazine.com/pv_solar",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Solar_Thermal Electric",
+    "url": "https://www.renewableenergymagazine.com/solar_thermal_electric",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Solar_Thermal",
+    "url": "https://www.renewableenergymagazine.com/thermal",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Biofuels",
+    "url": "https://www.renewableenergymagazine.com/biofuels",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Biogas",
+    "url": "https://www.renewableenergymagazine.com/biogas",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Biomass",
+    "url": "https://www.renewableenergymagazine.com/biomass",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Miscellaneous",
+    "url": "https://www.renewableenergymagazine.com/miscellaneous",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Geothermal",
+    "url": "https://www.renewableenergymagazine.com/geothermal",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Ocean Energy",
+    "url": "https://www.renewableenergymagazine.com/ocean_energy",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Small Hydro",
+    "url": "https://www.renewableenergymagazine.com/small_hydro",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Storage",
+    "url": "https://www.renewableenergymagazine.com/storage",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Energy Saving",
+    "url": "https://www.renewableenergymagazine.com/energy_saving",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Hydrogen",
+    "url": "https://www.renewableenergymagazine.com/hydrogen",
+    "action": "Add the link"
+  },
+  {
+    "name": "Renewable Energy Magazine - Electric/Hybrid",
+    "url": "https://www.renewableenergymagazine.com/electric_hybrid_vehicles",
+    "action": "Add the link"
+  },
+  {
+    "name": "BusinessWire - Energy News",
+    "url": "https://www.businesswire.com/newsroom/industry/energy",
+    "action": "Add the link"
+  },
+  {
+    "name": "Energy News Bulletin - O&G_Operations",
+    "url": "https://www.energynewsbulletin.net/category/oil-gas/operations",
+    "action": "Add the link"
+  },
+  {
+    "name": "Energy News Bulletin - O&G_Exploration",
+    "url": "https://www.energynewsbulletin.net/category/oil-gas/exploration",
+    "action": "Add the link"
+  },
+  {
+    "name": "Energy News Bulletin - O&G_Policy",
+    "url": "https://www.energynewsbulletin.net/category/oil-gas/policy",
+    "action": "Add the link"
+  },
+  {
+    "name": "Energy News Bulletin - ET",
+    "url": "https://www.energynewsbulletin.net/category/energy-transition",
+    "action": "Add the link"
+  },
+  {
+    "name": "Energy News Bulletin - Markets",
+    "url": "https://www.energynewsbulletin.net/category/markets",
+    "action": "Add the link"
+  },
+  {
+    "name": "Energy News Bulletin - Opinion",
+    "url": "https://www.energynewsbulletin.net/category/opinion",
+    "action": "Add the link"
+  },
+  {
+    "name": "BOE Report",
+    "url": "https://boereport.com/category/oil-and-gas-news-headlines/",
+    "action": "Add the link"
+  },
+  {
+    "name": "RenewablesNow - Solar",
+    "url": "https://renewablesnow.com/news/solar/",
+    "action": "Add the link"
+  },
+  {
+    "name": "RenewablesNow - Onshore Wind",
+    "url": "https://renewablesnow.com/news/wind/",
+    "action": "Add the link"
+  },
+  {
+    "name": "RenewablesNow - Energy Storage",
+    "url": "https://renewablesnow.com/news/energy-storage/",
+    "action": "Add the link"
+  },
+  {
+    "name": "RenewablesNow - Offshore Wind",
+    "url": "https://renewablesnow.com/news/offshore-wind/",
+    "action": "Add the link"
+  },
+  {
+    "name": "RenewablesNow - Hydrogen",
+    "url": "https://renewablesnow.com/news/hydrogen/",
+    "action": "Add the link"
+  },
+  {
+    "name": "RenewablesNow - Other Renewables",
+    "url": "https://renewablesnow.com/news/other-renewables/",
+    "action": "Add the link"
+  },
+  {
+    "name": "World Oil",
+    "url": "https://worldoil.com/news",
+    "action": "Add the link"
+  },
+  {
+    "name": "CSP - M&A",
+    "url": "https://www.cspdailynews.com/mergers-acquisitions",
+    "action": "Add the link"
+  },
+  {
+    "name": "Expro",
+    "url": "https://expro.com.ua/novini",
+    "action": "Add the link"
+  },
+  {
+    "name": "E24",
+    "url": "https://e24.no/energi-og-klima",
+    "action": "Add the link"
+  },
+  {
+    "name": "Bloomberg All News",
+    "url": "https://www.bloomberg.com/latest?utm_source=homepage&utm_medium=web&utm_campaign=latest",
+    "action": "Add the link"
+  },
+  {
+    "name": "OGJ - General Interest",
+    "url": "https://www.ogj.com/general-interest",
+    "action": "Add the link"
+  },
+  {
+    "name": "OGJ - Refining & Processing",
+    "url": "https://www.ogj.com/refining-processing",
+    "action": "Add the link"
+  },
+  {
+    "name": "OGJ - Drilling & Production",
+    "url": "https://www.ogj.com/drilling-production",
+    "action": "Add the link"
+  },
+  {
+    "name": "OGJ - Exploration & Development",
+    "url": "https://www.ogj.com/exploration-development",
+    "action": "Add the link"
+  },
+  {
+    "name": "OGJ - Pipelines & Transportation",
+    "url": "https://www.ogj.com/pipelines-transportation",
+    "action": "Add the link"
+  },
+  {
+    "name": "Reuters - Energy",
+    "url": "https://www.reuters.com/business/energy/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Offshore Technology",
+    "url": "https://www.offshore-technology.com/news/",
+    "action": "Add the link"
+  },
+  {
+    "name": "BusinessWire - Alternative Energy",
+    "url": "https://www.businesswire.com/portal/site/home/news/industry/?vnsId=31022",
+    "action": "Add the link"
+  },
+  {
+    "name": "Globenewswire",
+    "url": "https://www.globenewswire.com/en/search/industry/Integrated%252520Oil%252520&%252520Gas,Oil%252520&%252520Gas%252520Producers,Oil%252520Equipment%252520&%252520Services,Oil%252520Equipment%CE%B4%252520Services%252520&%252520Distribution,Gas%252520Distribution,Gas%CE%B4%252520Water%252520&%252520Multiutilities,Utilities?pageSize=10",
+    "action": "Add the link"
+  },
+  {
+    "name": "Globenewswire",
+    "url": "https://www.globenewswire.com/en/search/industry/Multiutilities,Alternative%252520Electricity,Alternative%252520Energy,Alternative%252520Fuels,Energy,Renewable%252520Energy%252520Equipment,Water?pageSize=10",
+    "action": "Add the link"
+  },
+  {
+    "name": "Globenewswire",
+    "url": "https://www.globenewswire.com/en/search/industry/Mining,Gold%252520Mining,General%252520Mining,Industrial%252520Metals%252520&%252520Mining,Gas%252520Distribution,Oil%252520Equipment%CE%B4%252520Services%252520&%252520Distribution,Waste%252520&%252520Disposal%252520Services?pageSize=10",
+    "action": "Add the link"
+  },
+  {
+    "name": "Globenewswire",
+    "url": "https://www.globenewswire.com/en/search/industry/Copper,Electricity,Exploration%2520&%2520Production,Renewable%2520Energy%2520Equipment?pageSize=10",
+    "action": "Add the link"
+  },
+  {
+    "name": "SeeNews",
+    "url": "https://seenews.com/industries/energy",
+    "action": "Add the link"
+  },
+  {
+    "name": "SeeNews",
+    "url": "https://seenews.com/industries/mining",
+    "action": "Add the link"
+  },
+  {
+    "name": "SeeNews",
+    "url": "https://seenews.com/industries/transport",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/news/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/exploration-production/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/shale-plays/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/offshore/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/field-development/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/conventional/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/unconventional/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/heavy-oil/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/initial-production/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/ofs/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/discoveries/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/emerging-plays/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/reservoir-evaluation/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/acreage-maps/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/rig-counts/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/critical-minerals/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/upstream/power-generation",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/markets/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/acquisitions-and-divestitures/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/mergers/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/joint-ventures/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/lease-sales/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/trends/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/financing/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/debt/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/energy-market-transactions/equity/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/drilling/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/completions/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/logistics/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/enhanced-oil-recovery/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/artificial-lift/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/pressure-pumping/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/water-management/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/seismic/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/digital-oil-field/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/artificial-intelligence/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/machine-learning/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/geothermal/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/carbon-management/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/technology-and-innovation/ccs-ccus/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/renewables/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/hydrogen/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/nuclear/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/wind/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/solar/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/energy-storage/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/alternative-energies/bioenergy/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/pipelines/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/gathering-and-processing/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/compression/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/construction/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/storage/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/tankers/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/rail/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Hart Energy",
+    "url": "https://www.hartenergy.com/midstream-energy-infrastructure/trucks/",
+    "action": "Add the link"
+  },
+  {
+    "name": "Rig Zone: All",
+    "url": "https://www.rigzone.com/news/",
+    "action": "Add the link"
+  },
+  {
+    "name": "BNamericas - Electric Power",
+    "url": "https://www.bnamericas.com/en/list/news/1",
+    "action": "Add the link"
+  },
+  {
+    "name": "Mercom India",
+    "url": "https://www.rigzone.com/news/",
+    "action": "Add the link"
+  },
+  {
+    "name": "BusinessWire - M&A",
+    "url": "https://www.businesswire.com/newsroom/subject/merger-acquisition",
+    "action": "Add the link"
+  },
+  {
+    "name": "BusinessWire - Energy O&G",
+    "url": "https://www.businesswire.com/newsroom/industry/energy/oil-gas",
+    "action": "Add the link"
+  }
+]
